@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="navbar-brand" href="#">
+        <img src="" width="120px" alt="">
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ">
+            <li class="nav-item active" [ngClass]="{'active': seleccionado === 'inicio'}">
+                <a class="nav-link" (click)="cambiarOpcion('inicio')">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" [ngClass]="{'active': seleccionado === 'estudiantes'}">
+                <a class="nav-link" (click)="cambiarOpcion('estudiantes')"> segunda</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- <mat-drawer-container class="example-container mat-typography" autosize *ngIf="isExpanded">
+    <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+        <mat-nav-list>
+            <mat-accordion multi="true">
+                <mat-expansion-panel [class.mat-elevation-z0]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon mat-list-icon>domain</mat-icon>
+                            <h3 [ngClass]="{'active': seleccionado === 'inicio'}" >Estudiante</h3>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>domain</mat-icon>
+                        <p>Activos</p>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>domain</mat-icon>
+                        <p>Egresados</p>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>domain</mat-icon>
+                        <p>Graduados</p>
+                    </mat-list-item>
+                </mat-expansion-panel>
+
+                <mat-list-item>
+                    <mat-icon mat-list-icon>assignment</mat-icon>
+                    <h4 mat-line *ngIf="isExpanded">Asesorias</h4>
+                </mat-list-item>
+
+
+                <mat-list-item>
+                    <mat-icon mat-list-icon>assignment</mat-icon>
+                    <h3 mat-line *ngIf="isExpanded">Comite</h3>
+                </mat-list-item>
+
+
+                <mat-list-item>
+                    <mat-icon mat-list-icon>domain</mat-icon>
+                    <h3 mat-line *ngIf="isExpanded">Proyecto (Estudiantes)</h3>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon mat-list-icon>domain</mat-icon>
+                    <h3 mat-line *ngIf="isExpanded">Proyecto (Egresado)</h3>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon>folder_shared</mat-icon>
+                    <h3 mat-line *ngIf="isExpanded">Valorar Proyecto X</h3>
+                </mat-list-item>
+                <mat-expansion-panel [class.mat-elevation-z0]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon mat-list-icon>domain</mat-icon>
+                            <h3>Asignar Assesor</h3>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>domain</mat-icon>
+                        <p>Estudiantes</p>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>domain</mat-icon>
+                        <p>Egresados</p>
+                    </mat-list-item>
+                </mat-expansion-panel>
+
+            </mat-accordion>
+        </mat-nav-list>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <index-inicio></index-inicio> 
+    </div>
+</mat-drawer-container> -->

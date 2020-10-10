@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { menuOptions } from 'src/types/types';
 
 @Component({
 	selector: 'index',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class IndexComponent implements OnInit {
+	opcionMenu: menuOptions = 'inicio';
+
 
 	constructor() { }
 
 	ngOnInit() { }
+
+	verOpcion(event: menuOptions) {
+		this.opcionMenu = event;
+	}
 }

@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { indexRoutesModule } from './index.routes';
 import { IndexComponent } from './index.component';
+import { MenuComponent } from './menu/menu.component';
+import { AngularMaterialModule } from '../angularmaterial.module';
+import { InicioComponent } from './inicio/inicio.component';
+
 
 @NgModule({
     declarations: [
-        IndexComponent
+        IndexComponent,
+        MenuComponent,
+        InicioComponent
     ],
     imports: [
-        NgbModule,
+        indexRoutesModule,
         CommonModule,
-        indexRoutesModule
+        AngularMaterialModule
     ],
     providers: [],
+    entryComponents: [],
     bootstrap: [IndexComponent]
 })
 export class IndexModule { }

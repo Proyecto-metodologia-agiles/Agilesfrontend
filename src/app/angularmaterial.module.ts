@@ -8,6 +8,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 
 @NgModule({
     imports: [
@@ -19,7 +22,10 @@ import { MatIconModule } from '@angular/material/icon';
         MatSidenavModule,
         MatToolbarModule,
         MatGridListModule,
-        MatIconModule
+        MatIconModule,
+        MatListModule,
+        MatExpansionModule
+
     ],
     exports: [
         MatInputModule,
@@ -30,7 +36,9 @@ import { MatIconModule } from '@angular/material/icon';
         MatSidenavModule,
         MatToolbarModule,
         MatGridListModule,
-        MatIconModule
+        MatIconModule,
+        MatListModule,
+        MatExpansionModule
     ]
 })
 export class AngularMaterialModule { }

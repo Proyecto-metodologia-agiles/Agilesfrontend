@@ -1,0 +1,1 @@
+export type menuOptions = 'inicio' | 'estudiantes' | 'ejemplo';
