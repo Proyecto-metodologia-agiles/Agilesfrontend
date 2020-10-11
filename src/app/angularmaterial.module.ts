@@ -10,6 +10,8 @@ import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
         MatGridListModule,
         MatIconModule,
         MatListModule,
-        MatExpansionModule
+        MatExpansionModule,
+        MatTableModule,
+        MatPaginatorModule
 
     ],
     exports: [
@@ -38,7 +42,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
         MatGridListModule,
         MatIconModule,
         MatListModule,
-        MatExpansionModule
+        MatExpansionModule,
+        MatTableModule,
+        MatPaginatorModule
     ]
 })
 export class AngularMaterialModule { }
