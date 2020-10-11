@@ -12,6 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
         MatListModule,
         MatExpansionModule,
         MatTableModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatSelectModule
     ],
     exports: [
         MatInputModule,
@@ -42,7 +44,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
         MatListModule,
         MatExpansionModule,
         MatTableModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatSelectModule
     ]
 })
 export class AngularMaterialModule { }
