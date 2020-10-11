@@ -9,6 +9,7 @@ import { EstudianteComponent } from './estudiantes/estudiantes.component';
 import { AsesoresComponent } from './asesores/asesores.component';
 import { RegistrarAsesorComponent } from './shared/registrar-asesor/registrar-asesor.component';
 import { RegistrarEstudianteComponent } from './shared/registrar-estudiante/registrar-estudiante.component';
+import { MiembrosComiteComponent } from './miembros-comite/miembros-comite.component';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { RegistrarEstudianteComponent } from './shared/registrar-estudiante/regi
         AsesoresComponent,
         RegistrarAsesorComponent,
         InicioComponent,
-        RegistrarEstudianteComponent
+        RegistrarEstudianteComponent,
+        MiembrosComiteComponent
+
     ],
     imports: [
         indexRoutesModule,
@@ -27,7 +30,7 @@ import { RegistrarEstudianteComponent } from './shared/registrar-estudiante/regi
         AngularMaterialModule
     ],
     providers: [],
-    entryComponents: [AsesoresComponent, InicioComponent, RegistrarAsesorComponent,EstudianteComponent,RegistrarEstudianteComponent],
+    entryComponents: [AsesoresComponent, InicioComponent, RegistrarAsesorComponent,EstudianteComponent,RegistrarEstudianteComponent,MiembrosComiteComponent],
     bootstrap: [IndexComponent]
 })
 export class IndexModule { }
