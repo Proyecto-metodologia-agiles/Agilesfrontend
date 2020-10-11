@@ -17,6 +17,9 @@
             <li class="nav-item" [ngClass]="{'active': seleccionado === 'asesores'}">
                 <a class="nav-link" (click)="cambiarOpcion('asesores')"> Asesores</a>
             </li>
+            <li class="nav-item" [ngClass]="{'active': seleccionado === 'miembroComite'}">
+                <a class="nav-link" (click)="cambiarOpcion('miembroComite')"> Miembros Comité</a>
+            </li>
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
             <li class="nav-item">
