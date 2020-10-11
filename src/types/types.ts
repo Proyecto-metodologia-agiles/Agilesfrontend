@@ -1,1 +1,1 @@
-export type menuOptions = 'inicio' | 'estudiantes' | 'ejemplo';
+export type menuOptions = 'inicio' | 'estudiantes' | 'asesores';

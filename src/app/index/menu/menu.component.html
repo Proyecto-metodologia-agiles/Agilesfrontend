@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light nav-color">
     <div class="navbar-brand" href="#">
         <img src="" width="120px" alt="">
     </div>
@@ -12,7 +12,17 @@
                 <a class="nav-link" (click)="cambiarOpcion('inicio')">Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item" [ngClass]="{'active': seleccionado === 'estudiantes'}">
-                <a class="nav-link" (click)="cambiarOpcion('estudiantes')"> segunda</a>
+                <a class="nav-link" (click)="cambiarOpcion('estudiantes')">Estudiantes</a>
+            </li>
+            <li class="nav-item" [ngClass]="{'active': seleccionado === 'asesores'}">
+                <a class="nav-link" (click)="cambiarOpcion('asesores')"> Asesores</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item">
+                <a class="nav-link waves-effect waves-light p-0">
+                    <mat-icon>person</mat-icon>Usuario
+                </a>
             </li>
         </ul>
     </div>
