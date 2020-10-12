@@ -7,8 +7,8 @@ import { RegistrarEstudianteComponent } from '../shared/registrar-estudiante/reg
 
 
 const data: any[] = [
-	{ No: 1, Nombre: 'Andres felipe', Apellido: ' Perez', Cedula: 111882312, Correo: "andres@gmail.com", Telefono: '32222333', Direccion: 'Calle 13 la nevada', Semestre: 1, Edad: 10 },
-	{ No: 2, Nombre: 'Andres felipe', Apellido: ' Perez', Cedula: 111882312, Correo: "andres@gmail.com", Telefono: '32222333', Direccion: 'Calle 13 la nevada', Semestre: 1, Edad: 10},
+	{ No: 1, Nombre: 'Andres felipe', Apellido: ' Perez', Cedula: 111882312, Correo: "andres@gmail.com", Telefono: '32222333', Semestre: 1, Edad: 10 },
+	{ No: 2, Nombre: 'Andres felipe', Apellido: ' Perez', Cedula: 111882312, Correo: "andres@gmail.com", Telefono: '32222333', Semestre: 1, Edad: 10},
 ];
 
 @Component({
@@ -17,7 +17,7 @@ const data: any[] = [
 	styleUrls: ['./estudiantes.component.css']
 })
 export class EstudianteComponent implements OnInit {
-	displayedColumns: string[] = ['No', 'Nombre', 'Apellido', 'Cedula', 'Correo', 'Telefono', 'Direccion', 'Semestre','Edad'];
+	displayedColumns: string[] = ['No', 'Nombre', 'Apellido', 'Cedula', 'Correo', 'Telefono', 'Semestre','Edad'];
 	dataSource = data;
 
 	@ViewChild(MatPaginatorModule, { static: false }) paginator: MatPaginatorModule;
