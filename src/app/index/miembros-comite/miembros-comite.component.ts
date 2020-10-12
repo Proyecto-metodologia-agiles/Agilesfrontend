@@ -4,11 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { RegistrarComiteComponent } from '../shared/registrar-comite/registrar-comite.component';
 import { MiembroComiteService } from 'src/services/comite.service';
 import { MiembroComite } from 'src/models/miembroComite';
-
-const data: any[] = [
-  { No: 1, Nombre: 'Andres felipe', Apellido: ' Perez', Cedula: 111882312, Correo: "andres@gmail.com", Telefono: '32222333' },
-  { No: 2, Nombre: 'Andres felipe', Apellido: ' Perez', Cedula: 111882312, Correo: "andres@gmail.com", Telefono: '32222333' },
-];
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'index-miembros-comite',
@@ -17,22 +14,33 @@ const data: any[] = [
 })
 export class MiembrosComiteComponent implements OnInit {
   displayedColumns: string[] = ['No', 'FullName', 'Email', 'Phone', 'Identification'];
-  dataSource: MiembroComite[] = [];
-
-  @ViewChild(MatPaginatorModule, { static: false }) paginator: MatPaginatorModule;
+  dataSource = new MatTableDataSource();
+  ListComite: MiembroComite[] = [];
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   constructor(private dialog: MatDialog, private ComiteService: MiembroComiteService) { }
 
   async ngOnInit() {
-    (await this.ComiteService.getMiembroComite()).subscribe(response => {
-      this.dataSource = response
-    });
-    
+    await Promise.all([
+      (await this.ComiteService.getMiembroComite()).subscribe(
+        Response => {
+          this.ListComite = Response;
+          this.dataSource = new MatTableDataSource(Response);
+          this.dataSource.paginator = this.paginator;
+        }
+      )
+    ]);
   }
   async viewTable() {
-    (await this.ComiteService.getMiembroComite()).subscribe(response => {
-      this.dataSource = response
-    });
+    await Promise.all([
+      (await this.ComiteService.getMiembroComite()).subscribe(
+        Response => {
+          this.ListComite = Response;
+          this.dataSource = new MatTableDataSource(Response);
+          this.dataSource.paginator = this.paginator;
+        }
+      )
+    ]);
   }
 
   openDialog() {

@@ -1,3 +1,20 @@
-.inicio {
-
+.body {
+    width: 100%;
+    position: relative;
+    z-index: -1000;
 }
+
+.title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container-header{
+    text-align: center;
+    width: 100%;
+}
+
+.title-body{
+    text-align: left;
+}
+ 

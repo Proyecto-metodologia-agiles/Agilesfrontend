@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { asesores } from 'src/models/asesores';
 import { RegistrarAsesorComponent } from '../shared/registrar-asesor/registrar-asesor.component';
 import { ServiceAsesorService } from 'src/services/asesor.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
 	selector: 'index-asesores',
@@ -13,21 +14,34 @@ import { ServiceAsesorService } from 'src/services/asesor.service';
 
 export class AsesoresComponent implements OnInit {
 	displayedColumns: string[] = ['No', 'Name_Complet', 'Email', 'Identification', 'Type_Asser', 'Phone', 'Direction'];
-	dataSource: asesores[] = [];
-
-	@ViewChild(MatPaginatorModule, { static: false }) paginator: MatPaginatorModule;
+	// dataSource: asesores[] = [];
+	dataSource = new MatTableDataSource();
+	ListAsesores: asesores[] = [];
+	@ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
 	constructor(private dialog: MatDialog, private AsesorService: ServiceAsesorService) { }
 
 	async ngOnInit() {
-		(await this.AsesorService.getAsesores()).subscribe(response => {
-			this.dataSource = response
-		});
+		await Promise.all([
+			(await this.AsesorService.getAsesores()).subscribe(
+				Response => {
+					this.ListAsesores = Response;
+					this.dataSource = new MatTableDataSource(this.ListAsesores);
+					this.dataSource.paginator = this.paginator;
+				}
+			)
+		]);
 	}
 	async viewTable() {
-		(await this.AsesorService.getAsesores()).subscribe(response => {
-			this.dataSource = response
-		});
+		await Promise.all([
+			(await this.AsesorService.getAsesores()).subscribe(
+				Response => {
+					this.ListAsesores = Response;
+					this.dataSource = new MatTableDataSource(this.ListAsesores);
+					this.dataSource.paginator = this.paginator;
+				}
+			)
+		]);
 	}
 
 	openDialog() {
@@ -38,7 +52,7 @@ export class AsesoresComponent implements OnInit {
 			console.log(`Dialog result: ${result}`);
 			this.viewTable();
 		});
-		
+
 	}
 
 
