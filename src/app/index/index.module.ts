@@ -15,6 +15,7 @@ import { MiembrosComiteComponent } from './miembros-comite/miembros-comite.compo
 import { RegistrarComiteComponent } from './shared/registrar-comite/registrar-comite.component';
 import { ServiceAsesorService } from '../../services/asesor.service';
 import { ServiceEstudianteService } from '../../services/estudiante.service';
+import { MiembroComiteService } from 'src/services/comite.service';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,7 @@ import { ServiceEstudianteService } from '../../services/estudiante.service';
         ReactiveFormsModule,
         HttpClientModule
     ],
-    providers: [ServiceAsesorService,ServiceEstudianteService],
+    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService],
     entryComponents: [AsesoresComponent, InicioComponent, RegistrarAsesorComponent, EstudianteComponent, RegistrarEstudianteComponent, MiembrosComiteComponent],
     bootstrap: [IndexComponent]
 })
