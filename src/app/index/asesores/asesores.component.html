@@ -25,34 +25,34 @@
                             <td mat-cell *matCellDef="let item; let i = index;"> {{(i+1)}} </td>
                         </ng-container>
 
-                        <ng-container matColumnDef="Nombre">
+                        <ng-container matColumnDef="Name_Complet">
                             <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                            <td mat-cell *matCellDef="let item"> {{item.Nombre}} </td>
+                            <td mat-cell *matCellDef="let item"> {{item.Name_Complet}} </td>
                         </ng-container>
 
-                        <ng-container matColumnDef="Cedula">
-                            <th mat-header-cell *matHeaderCellDef> Cedula </th>
-                            <td mat-cell *matCellDef="let item"> {{item.Cedula}} </td>
-                        </ng-container>
-
-                        <ng-container matColumnDef="correo">
+                        <ng-container matColumnDef="Email">
                             <th mat-header-cell *matHeaderCellDef> Correo </th>
-                            <td mat-cell *matCellDef="let item"> {{item.correo}} </td>
+                            <td mat-cell *matCellDef="let item"> {{item.Email}} </td>
                         </ng-container>
 
-                        <ng-container matColumnDef="telefono">
-                            <th mat-header-cell *matHeaderCellDef> telefono </th>
-                            <td mat-cell *matCellDef="let item"> {{item.telefono}} </td>
+                        <ng-container matColumnDef="Identification">
+                            <th mat-header-cell *matHeaderCellDef> Identifiacion </th>
+                            <td mat-cell *matCellDef="let item"> {{item.Identification}} </td>
                         </ng-container>
 
-                        <ng-container matColumnDef="direccion">
-                            <th mat-header-cell *matHeaderCellDef> direccion </th>
-                            <td mat-cell *matCellDef="let item"> {{item.direccion}} </td>
+                        <ng-container matColumnDef="Type_Asser">
+                            <th mat-header-cell *matHeaderCellDef> Tipo asesor </th>
+                            <td mat-cell *matCellDef="let item"> {{item.Type_Asser}} </td>
                         </ng-container>
 
-                        <ng-container matColumnDef="tipoasesor">
-                            <th mat-header-cell *matHeaderCellDef> tipoasesor </th>
-                            <td mat-cell *matCellDef="let item"> {{item.tipoasesor}} </td>
+                        <ng-container matColumnDef="Phone">
+                            <th mat-header-cell *matHeaderCellDef> Telefono </th>
+                            <td mat-cell *matCellDef="let item"> {{item.Phone}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="Direction">
+                            <th mat-header-cell *matHeaderCellDef> Direccion </th>
+                            <td mat-cell *matCellDef="let item"> {{item.Direction}} </td>
                         </ng-container>
 
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
