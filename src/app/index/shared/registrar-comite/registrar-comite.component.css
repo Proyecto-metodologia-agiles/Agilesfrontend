@@ -3,9 +3,9 @@
     background-color: #339240 !important;
 }
 
-.mat-dialog-actions{
-    padding: 8px 0; 
-    min-height: 52px; 
+.mat-dialog-actions{  
+    display: flex; 
+    align-items: center;
     align-content: center;
-    margin-bottom: 0px;
+     margin-bottom: 0px;
 }

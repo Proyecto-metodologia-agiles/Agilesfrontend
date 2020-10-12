@@ -29,7 +29,6 @@ export class AsesoresComponent implements OnInit {
 
 	openDialog() {
 		const dialogRef = this.dialog.open(RegistrarAsesorComponent, {
-			height: '450px',
 			width: '300%',
 		});
 		dialogRef.afterClosed().subscribe(result => {
