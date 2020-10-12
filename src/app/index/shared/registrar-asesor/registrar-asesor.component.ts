@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { asesores } from 'src/models/asesores';
+import { ServiceAsesorService } from 'src/services/asesor.service';
 
 @Component({
 	selector: 'app-registrar-asesor',
@@ -8,7 +10,16 @@ import { Component, OnInit } from '@angular/core';
 
 export class RegistrarAsesorComponent implements OnInit {
 	TipoAsesor = ['Metologico', 'Tematico']
-	constructor() { }
+
+	Asesor = new asesores();
+
+	constructor(private asesorservice: ServiceAsesorService) { }
 
 	ngOnInit() { }
+
+
+	async onSubmit() {
+		this.Asesor.contrasena = this.Asesor.getPassword();
+		this.asesorservice.addAsesor(this.Asesor);
+	}
 }
