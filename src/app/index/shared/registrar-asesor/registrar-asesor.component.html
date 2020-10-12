@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Registrar nuevo asesore</h2>
+<h2 mat-dialog-title>Registrar nuevo asesor</h2>
 <mat-dialog-content class="mat-typography">
     <p class="title-body font-weight-light text-wrap">Complete los siguientes datos</p>
     <form (ngSubmit)="form.form.valid && onSubmit()" #form="ngForm">
@@ -7,7 +7,7 @@
                 <mat-form-field appearance="outline" class="mat-form-field w-100">
                     <mat-label>Nombre Completo</mat-label>
                     <input type="text" matInput placeholder="Digitar Nombre" name="nombreAsesor"
-                        [(ngModel)]="Asesor.nombreCompleto" required>
+                        [(ngModel)]="Asesor.Name_Complet" required>
                 </mat-form-field>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="col-6">
                 <mat-form-field appearance="outline" class="mat-form-field w-100">
                     <mat-label>Correo electronico</mat-label>
-                    <input type="email" matInput placeholder="Digitar correo" [(ngModel)]="Asesor.correo"
+                    <input type="email" matInput placeholder="Digitar correo" [(ngModel)]="Asesor.Email"
                         name="correoAsesor" required>
                 </mat-form-field>
             </div>
@@ -24,7 +24,7 @@
                 <mat-form-field appearance="outline" class="mat-form-field w-100">
                     <mat-label>Telefono</mat-label>
                     <input type="number" matInput placeholder="Digitar telefono" name="telefonoAsesor"
-                        [(ngModel)]="Asesor.telefono" required>
+                        [(ngModel)]="Asesor.Phone" required>
                 </mat-form-field>
             </div>
         </div>
@@ -33,13 +33,13 @@
                 <mat-form-field appearance="outline" class="mat-form-field w-100">
                     <mat-label>Numero identificacion</mat-label>
                     <input type="number" matInput placeholder="Digitar identificacion"
-                        [(ngModel)]="Asesor.identificacion" name="identificacionAsesor" required>
+                        [(ngModel)]="Asesor.Identification" name="identificacionAsesor" required>
                 </mat-form-field>
             </div>
             <div class="col-6">
                 <mat-form-field appearance="outline" class="mat-form-field w-100">
                     <mat-label>Rol</mat-label>
-                    <mat-select name="tipoasesor" [(ngModel)]="Asesor.tipoAsesor">
+                    <mat-select name="tipoasesor" [(ngModel)]="Asesor.Type_Asser">
                         <mat-option *ngFor="let item of TipoAsesor" [value]="item">
                             {{item}}
                         </mat-option>
@@ -52,8 +52,8 @@
             <div class="col-12">
                 <mat-form-field appearance="outline" class="mat-form-field w-100">
                     <mat-label>Direccion</mat-label>
-                    <input type="text" matInput placeholder="Digitar identificacion" name="direccionAsesor"
-                        [(ngModel)]="Asesor.direccion" required>
+                    <input type="text" matInput placeholder="Digitar dirección" name="direccionAsesor"
+                        [(ngModel)]="Asesor.Direction" required>
                 </mat-form-field>
             </div>
         </div>

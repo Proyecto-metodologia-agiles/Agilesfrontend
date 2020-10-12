@@ -1,21 +1,21 @@
 export class asesores {
-    nombreCompleto: string;
-    correo: string;
-    identificacion: number;
-    telefono: number;
-    tipoAsesor: string;
-    contrasena: string;
-    direccion: string;
+    Name_Complet: string;
+    Email: string;
+    Identification: string;
+    Phone: string;
+    Type_Asser: string;
+    Password: string;
+    Direction: string;
 
 
     constructor() {
-        this.nombreCompleto = '';
-        this.contrasena = '';
-        this.correo = '';
-        this.identificacion = 0;
-        this.tipoAsesor = '';
-        this.telefono = 0;
-        this.direccion = '';
+        this.Name_Complet = '';
+        this.Password = '';
+        this.Email = '';
+        this.Identification = '';
+        this.Type_Asser = '';
+        this.Phone = '';
+        this.Direction = '';
     }
 
     getPassword() {
@@ -26,4 +26,4 @@ export class asesores {
         }
         return contraseña;
     }
-}   
+}

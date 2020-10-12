@@ -1,20 +1,28 @@
 export class Estudiante {
-  identificacion: number;
-  nombreCompleto: string;
-  correo: string;
-  telefono: string;
-  semestre: number;
-  contrasena: string;
-  edad: number;
+  Cedula: string;
+  NombreCompleto: string;
+  Correo: string;
+  Celular: string;
+  Semestre: number;
+  Password: string;
+  Edad: string;
 
+    constructor() {
+      this.NombreCompleto = '';
+      this.Cedula = '';
+      this.Correo = '';
+      this.Password = '';
+      this.Celular = '';
+      this.Edad = '';
+      this.Semestre = 0;
+    }
 
-  constructor() {
-    this.nombreCompleto = '';
-    this.identificacion = 0;
-    this.correo = '';
-    this.contrasena = '';
-    this.telefono = '';
-    this.edad = 0;
-    this.semestre = 0;
-  }
+  getPassword() {
+    let caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
+    let contraseña = "";
+    for (let i = 0; i <= 15; i++) {
+        contraseña += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+    return contraseña;
+}
 }

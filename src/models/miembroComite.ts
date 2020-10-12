@@ -1,15 +1,15 @@
 export class MiembroComite {
-  identificacion: number;
-  nombreCompleto: string;
-  correo: string;
-  telefono: string;
-  contraseña: number;
+  Identification: string;
+  FullName: string;
+  Email: string;
+  Phone: string;
+  Password: string;
 
   constructor() {
-    this.nombreCompleto = '';
-    this.correo = '';
-    this.telefono = '';
-    this.identificacion = 0;
-    this.contraseña = 0;
+    this.FullName = '';
+    this.Email = '';
+    this.Phone = '';
+    this.Identification = '';
+    this.Password = '';
   }
 }
