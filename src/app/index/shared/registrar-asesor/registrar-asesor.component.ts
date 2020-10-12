@@ -19,8 +19,7 @@ export class RegistrarAsesorComponent implements OnInit {
 
 
 	async onSubmit() {
-		this.Asesor.Password = this.Asesor.getPassword();
-		console.log(this.Asesor);
-		//this.asesorservice.addAsesor(this.Asesor);
+		this.Asesor.Password = this.Asesor.getPassword()
+		this.asesorservice.addAsesor(this.Asesor);
 	}
 }
