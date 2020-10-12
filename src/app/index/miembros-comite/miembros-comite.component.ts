@@ -27,7 +27,6 @@ export class MiembrosComiteComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(RegistrarComiteComponent, {
-      height: '450px',
       width: '300%',
     });
     dialogRef.afterClosed().subscribe(result => {
