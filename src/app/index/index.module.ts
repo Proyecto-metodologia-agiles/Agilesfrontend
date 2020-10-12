@@ -13,7 +13,8 @@ import { RegistrarAsesorComponent } from './shared/registrar-asesor/registrar-as
 import { RegistrarEstudianteComponent } from './shared/registrar-estudiante/registrar-estudiante.component';
 import { MiembrosComiteComponent } from './miembros-comite/miembros-comite.component';
 import { RegistrarComiteComponent } from './shared/registrar-comite/registrar-comite.component';
-import { ServiceAsesorService } from '../../services/asesor.service'
+import { ServiceAsesorService } from '../../services/asesor.service';
+import { ServiceEstudianteService } from '../../services/estudiante.service';
 
 @NgModule({
     declarations: [
@@ -35,7 +36,7 @@ import { ServiceAsesorService } from '../../services/asesor.service'
         ReactiveFormsModule,
         HttpClientModule
     ],
-    providers: [ServiceAsesorService],
+    providers: [ServiceAsesorService,ServiceEstudianteService],
     entryComponents: [AsesoresComponent, InicioComponent, RegistrarAsesorComponent, EstudianteComponent, RegistrarEstudianteComponent, MiembrosComiteComponent],
     bootstrap: [IndexComponent]
 })
