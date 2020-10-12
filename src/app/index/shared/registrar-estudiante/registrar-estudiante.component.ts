@@ -18,6 +18,6 @@ export class RegistrarEstudianteComponent implements OnInit {
 
   async onSubmit() {
     this.estudiante.Password = this.estudiante.getPassword();
-    this.estudianteservice.addAsesor(this.estudiante);
+    this.estudianteservice.addEstudiante(this.estudiante);
   }
 }

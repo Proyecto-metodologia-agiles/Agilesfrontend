@@ -18,8 +18,6 @@ export class MenuComponent implements OnInit {
 	ngOnInit() { }
 
 	cambiarOpcion(options: menuOptions) {
-		console.log(options);
-
 		this.seleccionado = options;
 		this.opcion.emit(options);
 	}

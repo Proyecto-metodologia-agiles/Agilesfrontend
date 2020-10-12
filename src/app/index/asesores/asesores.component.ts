@@ -24,6 +24,11 @@ export class AsesoresComponent implements OnInit {
 			this.dataSource = response
 		});
 	}
+	async viewTable() {
+		(await this.AsesorService.getAsesores()).subscribe(response => {
+			this.dataSource = response
+		});
+	}
 
 	openDialog() {
 		const dialogRef = this.dialog.open(RegistrarAsesorComponent, {
@@ -31,7 +36,9 @@ export class AsesoresComponent implements OnInit {
 		});
 		dialogRef.afterClosed().subscribe(result => {
 			console.log(`Dialog result: ${result}`);
+			this.viewTable();
 		});
+		
 	}
 
 

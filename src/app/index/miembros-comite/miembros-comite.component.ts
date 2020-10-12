@@ -27,8 +27,13 @@ export class MiembrosComiteComponent implements OnInit {
     (await this.ComiteService.getMiembroComite()).subscribe(response => {
       this.dataSource = response
     });
+    
   }
-
+  async viewTable() {
+    (await this.ComiteService.getMiembroComite()).subscribe(response => {
+      this.dataSource = response
+    });
+  }
 
   openDialog() {
     const dialogRef = this.dialog.open(RegistrarComiteComponent, {
@@ -36,6 +41,7 @@ export class MiembrosComiteComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      this.viewTable();
     });
   }
 

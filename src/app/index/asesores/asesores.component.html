@@ -27,38 +27,38 @@
 
                         <ng-container matColumnDef="Name_Complet">
                             <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                            <td mat-cell *matCellDef="let item"> {{item.Name_Complet}} </td>
+                            <td mat-cell *matCellDef="let item"> {{item.name_Complet}} </td>
                         </ng-container>
 
                         <ng-container matColumnDef="Email">
                             <th mat-header-cell *matHeaderCellDef> Correo </th>
-                            <td mat-cell *matCellDef="let item"> {{item.Email}} </td>
+                            <td mat-cell *matCellDef="let item"> {{item.email}} </td>
                         </ng-container>
 
                         <ng-container matColumnDef="Identification">
                             <th mat-header-cell *matHeaderCellDef> Identifiacion </th>
-                            <td mat-cell *matCellDef="let item"> {{item.Identification}} </td>
+                            <td mat-cell *matCellDef="let item"> {{item.identification}} </td>
                         </ng-container>
 
                         <ng-container matColumnDef="Type_Asser">
                             <th mat-header-cell *matHeaderCellDef> Tipo asesor </th>
-                            <td mat-cell *matCellDef="let item"> {{item.Type_Asser}} </td>
+                            <td mat-cell *matCellDef="let item"> {{item.type_Asser}} </td>
                         </ng-container>
 
                         <ng-container matColumnDef="Phone">
                             <th mat-header-cell *matHeaderCellDef> Telefono </th>
-                            <td mat-cell *matCellDef="let item"> {{item.Phone}} </td>
+                            <td mat-cell *matCellDef="let item"> {{item.phone}} </td>
                         </ng-container>
 
                         <ng-container matColumnDef="Direction">
                             <th mat-header-cell *matHeaderCellDef> Direccion </th>
-                            <td mat-cell *matCellDef="let item"> {{item.Direction}} </td>
+                            <td mat-cell *matCellDef="let item"> {{item.direction}} </td>
                         </ng-container>
 
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
-                    <mat-paginator [pageSizeOptions]="[1, 10, 20]" showFirstLastButtons></mat-paginator>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
                 </div>
             </div>
         </div>

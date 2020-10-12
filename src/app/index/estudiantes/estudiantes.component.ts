@@ -3,13 +3,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { Estudiante } from 'src/models/estudiante';
 import { MatDialog } from '@angular/material/dialog';
 import { RegistrarEstudianteComponent } from '../shared/registrar-estudiante/registrar-estudiante.component';
+import { ServiceEstudianteService } from 'src/services/estudiante.service';
 
-
-
-const data: any[] = [
-	{ No: 1, NombreCompleto: 'Andres felipe', Apellido: ' Perez', Cedula: 111882312, Correo: "andres@gmail.com", Celular: '32222333', Edad: 10, Semestre: 1},
-	{ No: 2, NombreCompleto: 'Andres felipe', Apellido: ' Perez', Cedula: 111882312, Correo: "andres@gmail.com", Celular: '32222333', Edad: 10, Semestre: 1},
-];
 
 @Component({
 	selector: 'index-estudiantes',
@@ -18,13 +13,21 @@ const data: any[] = [
 })
 export class EstudianteComponent implements OnInit {
 	displayedColumns: string[] = ['No', 'NombreCompleto', 'Cedula', 'Correo', 'Celular', 'Edad','Semestre'];
-	dataSource = data;
+	dataSource: Estudiante[] = [];
 
 	@ViewChild(MatPaginatorModule, { static: false }) paginator: MatPaginatorModule;
 
-	constructor(private dialog: MatDialog) { }
+	constructor(private dialog: MatDialog, private EstudianteService: ServiceEstudianteService) { }
 
-	ngOnInit() {
+	async ngOnInit() {
+		(await this.EstudianteService.getEstudiantes()).subscribe(response => {
+			this.dataSource = response
+		});
+	}
+	async viewTable() {
+		(await this.EstudianteService.getEstudiantes()).subscribe(response => {
+			this.dataSource = response
+		});
 	}
 	openDialog() {
 		const dialogRef = this.dialog.open(RegistrarEstudianteComponent, {
@@ -32,6 +35,7 @@ export class EstudianteComponent implements OnInit {
 		});
 		dialogRef.afterClosed().subscribe(result => {
 			console.log(`Dialog result: ${result}`);
+			this.viewTable();
 		});
 	}
 }
