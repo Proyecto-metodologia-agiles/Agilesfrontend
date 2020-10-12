@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { RegistrarComiteComponent } from '../shared/registrar-comite/registrar-comite.component';
+import { MiembroComiteService } from 'src/services/comite.service';
+import { MiembroComite } from 'src/models/miembroComite';
 
 const data: any[] = [
   { No: 1, Nombre: 'Andres felipe', Apellido: ' Perez', Cedula: 111882312, Correo: "andres@gmail.com", Telefono: '32222333' },
@@ -14,14 +16,17 @@ const data: any[] = [
   styleUrls: ['./miembros-comite.component.css']
 })
 export class MiembrosComiteComponent implements OnInit {
-  displayedColumns: string[] = ['No', 'Nombre', 'Apellido', 'Cedula', 'Correo', 'Telefono'];
-  dataSource = data;
+  displayedColumns: string[] = ['No', 'FullName', 'Email', 'Phone', 'Identification'];
+  dataSource: MiembroComite[] = [];
 
   @ViewChild(MatPaginatorModule, { static: false }) paginator: MatPaginatorModule;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private ComiteService: MiembroComiteService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    (await this.ComiteService.getMiembroComite()).subscribe(response => {
+      this.dataSource = response
+    });
   }
 
 
