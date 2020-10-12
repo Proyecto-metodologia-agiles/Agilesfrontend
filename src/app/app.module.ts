@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angularmaterial.module'
-import { Estudiante } from 'src/models/estudiante';
-
 @NgModule({
   declarations: [
     AppComponent,

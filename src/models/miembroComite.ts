@@ -6,10 +6,10 @@ export class MiembroComite {
   contraseña: number;
 
   constructor() {
-    this.identificacion = 0;
     this.nombreCompleto = '';
     this.correo = '';
     this.telefono = '';
+    this.identificacion = 0;
     this.contraseña = 0;
   }
 }

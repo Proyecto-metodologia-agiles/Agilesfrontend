@@ -9,12 +9,12 @@ export class Estudiante {
 
 
   constructor() {
-    this.identificacion = 0;
     this.nombreCompleto = '';
+    this.identificacion = 0;
     this.correo = '';
-    this.telefono = '';
-    this.semestre = 0;
     this.contrasena = '';
+    this.telefono = '';
     this.edad = 0;
+    this.semestre = 0;
   }
 }
