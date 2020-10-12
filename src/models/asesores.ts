@@ -1,17 +1,15 @@
 export class asesores {
-    nombres: string;
-    apellidos: string;
-    identificacion: number;
+    nombreCompleto: string;
     correo: string;
-    contrasena: string;
-    tipoAsesor: string;
+    identificacion: number;
     telefono: number;
+    tipoAsesor: string;
+    contrasena: string;
     direccion: string;
 
 
     constructor() {
-        this.nombres = '';
-        this.apellidos = '';
+        this.nombreCompleto = '';
         this.identificacion = 0;
         this.correo = '';
         this.contrasena = ''
@@ -19,20 +17,4 @@ export class asesores {
         this.telefono = 0;
         this.direccion = '';
     }
-}
-
-
-
-
-
-
-// datos de los asesores :
-
-
-// Nombre
-// Apellido
-// Numero de documento de identidad
-// Correo electrónico
-// Tipo de asesor
-// Número telefónico
-// dirección
+}   
