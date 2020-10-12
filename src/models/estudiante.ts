@@ -7,6 +7,7 @@ export class Estudiante {
     direccion: string;
     semestre: number;
     contrasena: string;
+    edad: number;
 
   
     constructor() {
@@ -18,5 +19,6 @@ export class Estudiante {
       this.direccion = '';
       this.semestre = 0;
       this.contrasena = '';
+      this.edad = 0;
     }
   }
