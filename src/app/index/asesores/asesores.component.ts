@@ -26,7 +26,7 @@ export class AsesoresComponent implements OnInit {
 			(await this.AsesorService.getAsesores()).subscribe(
 				Response => {
 					this.ListAsesores = Response;
-					this.dataSource = new MatTableDataSource(this.ListAsesores);
+					this.dataSource = new MatTableDataSource(Response);
 					this.dataSource.paginator = this.paginator;
 				}
 			)
@@ -37,7 +37,7 @@ export class AsesoresComponent implements OnInit {
 			(await this.AsesorService.getAsesores()).subscribe(
 				Response => {
 					this.ListAsesores = Response;
-					this.dataSource = new MatTableDataSource(this.ListAsesores);
+					this.dataSource = new MatTableDataSource(Response);
 					this.dataSource.paginator = this.paginator;
 				}
 			)

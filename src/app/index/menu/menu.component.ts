@@ -9,6 +9,7 @@ import { menuOptions } from 'src/types/types'
 })
 
 export class MenuComponent implements OnInit {
+	showFiller = false;
 
 	@Output() opcion = new EventEmitter<menuOptions>();
 	seleccionado: menuOptions = 'inicio';
@@ -21,4 +22,5 @@ export class MenuComponent implements OnInit {
 		this.seleccionado = options;
 		this.opcion.emit(options);
 	}
+
 }
