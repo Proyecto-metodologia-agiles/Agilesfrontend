@@ -1,0 +1,55 @@
+<div class="container  mt-5">
+    <div class="container-header">
+        <div class="row">
+            <div class="col-12">
+                <h1>Proyectos de grado registrados</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="mat-elevation-z2">
+                    <table mat-table [dataSource]="dataSource" class="w-100" MatSort>
+                        <ng-container matColumnDef="No">
+                            <th mat-header-cell *matHeaderCellDef> No. </th>
+                            <td mat-cell *matCellDef="let item; let i = index;"> {{(i+1)}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="estudiante_1">
+                            <th mat-header-cell *matHeaderCellDef> Estudiante 1 </th>
+                            <td mat-cell *matCellDef="let item"> {{item.estudiante_1}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="estudiante_2">
+                            <th mat-header-cell *matHeaderCellDef> Estudiante 2</th>
+                            <td mat-cell *matCellDef="let item"> {{item.estudiante_2}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="asesorMetodologico">
+                            <th mat-header-cell *matHeaderCellDef> Asesor Metodológico</th>
+                            <td mat-cell *matCellDef="let item"> {{item.asesorMetodologico}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="asesorTematico">
+                            <th mat-header-cell *matHeaderCellDef> Asesor Temático </th>
+                            <td mat-cell *matCellDef="let item"> {{item.asesorTematico}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="asignarasesortematico">
+                            <th mat-header-cell *matHeaderCellDef> Asignar asesor tematico</th>
+                            <td mat-cell *matCellDef="let item"> {{item.asignarasesortematico}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="asignarasesorMetodo">
+                            <th mat-header-cell *matHeaderCellDef> Asignar asesor metodologico</th>
+                            <td mat-cell *matCellDef="let item"> {{item.asignarasesorMetodo}} </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
