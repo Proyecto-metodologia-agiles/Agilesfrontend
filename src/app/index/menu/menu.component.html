@@ -28,7 +28,7 @@
 
                     <mat-list-item>
                         <h6 (click)="cambiarOpcion('asesores')">
-                            <mat-icon class="icon-aling" mat-icon>people</mat-icon>Asesorias
+                            <mat-icon class="icon-aling" mat-icon>people</mat-icon>Asesores
                         </h6>
                     </mat-list-item>
 
@@ -39,7 +39,7 @@
                     </mat-list-item>
 
                     <mat-list-item>
-                        <h6>
+                        <h6 (click)="cambiarOpcion('listarProyecto')">
                             <mat-icon class="icon-aling" mat-icon>bar_chart</mat-icon>Proyecto (Estudiantes)
                         </h6>
                     </mat-list-item>
@@ -57,7 +57,7 @@
                     <mat-expansion-panel [class.mat-elevation-z0]="true">
                         <mat-expansion-panel-header>
                             <h6>
-                                <mat-icon class="icon-aling" mat-icon>person</mat-icon>Asignar Assesor
+                                <mat-icon class="icon-aling" mat-icon>person</mat-icon>Asignar Asesor
                             </h6>
                         </mat-expansion-panel-header>
                         <mat-list-item>
@@ -92,5 +92,6 @@
         <index-estudiantes *ngIf="seleccionado === 'estudiantes'"></index-estudiantes>
         <index-asesores *ngIf="seleccionado === 'asesores'"></index-asesores>
         <index-miembros-comite *ngIf="seleccionado === 'miembroComite'"></index-miembros-comite>
+        <index-listar-proyecto *ngIf="seleccionado === 'listarProyecto'"></index-listar-proyecto>
     </div>
 </mat-drawer-container>

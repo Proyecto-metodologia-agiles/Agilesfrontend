@@ -16,6 +16,7 @@ import { RegistrarComiteComponent } from './shared/registrar-comite/registrar-co
 import { ServiceAsesorService } from '../../services/asesor.service';
 import { ServiceEstudianteService } from '../../services/estudiante.service';
 import { MiembroComiteService } from 'src/services/comite.service';
+import { ListarProyectoComponent } from './listar-proyecto/listar-proyecto.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { MiembroComiteService } from 'src/services/comite.service';
         RegistrarAsesorComponent,
         RegistrarEstudianteComponent,
         MiembrosComiteComponent,
-        RegistrarComiteComponent
+        RegistrarComiteComponent,
+        ListarProyectoComponent
     ],
     imports: [
         indexRoutesModule,
