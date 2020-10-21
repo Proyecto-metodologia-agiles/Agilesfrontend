@@ -1,0 +1,105 @@
+<h2 mat-dialog-title>Registrar AnteProyecto</h2>
+<mat-dialog-content class="mat-typography">
+    <p class="title-body font-weight-light text-wrap">Complete los siguientes datos</p>
+    <form (ngSubmit)="form.form.valid" #form="ngForm">
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field appearance="outline" class="mat-form-field w-100">
+                        <mat-label>Título del AnteProyecto</mat-label>
+                        <input type="text" matInput placeholder="Digitar Título del AnteProyecto" name="tituloAnteProyecto"
+                           required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field appearance="outline" class="mat-form-field w-100">
+                        <mat-label>Estudiante 1</mat-label>
+                        <input type="text" matInput placeholder="Digitar nombre del primer estudiante" name="estudiante_1"
+                            required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field appearance="outline" class="mat-form-field w-100">
+                        <mat-label>Estudiante 2</mat-label>
+                        <mat-select name="estudiante_2" >
+                            <mat-option *ngFor="let item of Estudiante" [value]="item">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field appearance="outline" class="mat-form-field w-100">
+                        <mat-label>Enfoque</mat-label>
+                        <mat-select name="enfoque">
+                            <mat-option *ngFor="let item of Enfoque" [value]="item">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                        <div class="custom-file">
+                            <input accept = ".pdf" type="file" class="custom-file-input" id="customFile" required>
+                            <label class="custom-file-label" for="customFile">Adjunte archivo de Anteproyecto (Formato .PDF)</label>
+                          </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field appearance="outline" class="mat-form-field w-100">
+                        <mat-label>Asesor Metodológico (Sugerido)</mat-label>
+                        <mat-select name="linea">
+                            <mat-option *ngFor="let item of Asesor" [value]="item">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field appearance="outline" class="mat-form-field w-100">
+                        <mat-label>Asesor Temático (Sugerido)</mat-label>
+                        <mat-select name="linea">
+                            <mat-option *ngFor="let item of Asesor" [value]="item">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field appearance="outline" class="mat-form-field w-100">
+                        <mat-label>Linea</mat-label>
+                        <mat-select name="linea">
+                            <mat-option *ngFor="let item of Lineas" [value]="item">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field appearance="outline" class="mat-form-field w-100">
+                        <mat-label>Corte</mat-label>
+                        <input type="number" matInput placeholder="Digitar corte" name="corte"
+                            required>
+                    </mat-form-field>
+                </div>
+            </div>
+        <mat-dialog-actions align="center">
+            <button mat-raised-button id="btn-color" class="mb-4" [mat-dialog-close]="true"
+                cdkFocusInitial type ="submit">Guardar</button>
+            <button mat-raised-button mat-dialog-close color="warn" class="mb-4">Cancelar</button>
+        </mat-dialog-actions>
+    </form>
+</mat-dialog-content>

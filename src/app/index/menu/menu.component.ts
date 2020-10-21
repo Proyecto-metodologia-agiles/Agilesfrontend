@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { menuOptions } from 'src/types/types'
+import { MatDialog } from '@angular/material/dialog';
+import { RegistrarProyectoComponent } from '../shared/registrar-proyecto/registrar-proyecto.component';
 
 
 @Component({
@@ -13,7 +15,7 @@ export class MenuComponent implements OnInit {
 
 	@Output() opcion = new EventEmitter<menuOptions>();
 	seleccionado: menuOptions = 'inicio';
-	constructor() {
+	constructor(private dialog: MatDialog) {
 	}
 
 	ngOnInit() { }
