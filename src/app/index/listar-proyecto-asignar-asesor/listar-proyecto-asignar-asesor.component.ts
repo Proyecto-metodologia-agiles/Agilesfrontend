@@ -7,8 +7,8 @@ import { ConfirmarAsesorMetodologicoComponent } from '../shared/confirmar-asesor
 
 
 const data: any[] = [
-	{ No: 1, estudiante_1: 'Andres felipe', estudiante_2: ' Perez', asesorMetodologico: "asesor M", asesorTematico: "asesor tematico", asignarasesortematico: "botones", asignarasesorMetodo: 'botones' },
-	{ No: 1, estudiante_1: 'Andres felipe', estudiante_2: ' Perez', asesorMetodologico: "asesor M", asesorTematico: "asesor tematico", asignarasesortematico: "botones", asignarasesorMetodo: 'botones' },
+	{ No: 1, estudiante_1: 'Andres felipe', estudiante_2: ' Perez', asesorMetodologico: "asesor M", asesorTematico: "asesor tematico", asignartipoasesor: "botones" },
+	{ No: 1, estudiante_1: 'Andres felipe', estudiante_2: ' Perez', asesorMetodologico: "asesor M", asesorTematico: "asesor tematico", asignartipoasesor: "botones" },
 ];
 @Component({
 	selector: 'listar-proyecto-asignar',
@@ -18,7 +18,7 @@ const data: any[] = [
 
 export class ProyectoAsignarAsesorComponent implements OnInit {
 	datamostrar = [];
-	displayedColumns: string[] = ['No', 'estudiante_1', 'estudiante_2', 'asesorMetodologico', 'asesorTematico', 'asignarasesortematico', 'asignarasesorMetodo'];
+	displayedColumns: string[] = ['No', 'estudiante_1', 'estudiante_2', 'asesorMetodologico', 'asesorTematico', 'asignartipoasesor'];
 	dataSource = new MatTableDataSource();
 	@ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 

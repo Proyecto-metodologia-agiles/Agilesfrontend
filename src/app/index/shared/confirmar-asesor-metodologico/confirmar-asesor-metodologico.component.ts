@@ -9,7 +9,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 
 export class ConfirmarAsesorMetodologicoComponent implements OnInit {
-	Semestres = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+	Semestres = ['Corte 1', 'Corte 2'];
 
 	constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
 
