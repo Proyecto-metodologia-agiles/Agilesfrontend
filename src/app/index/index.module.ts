@@ -19,6 +19,7 @@ import { MiembroComiteService } from 'src/services/comite.service';
 import { ListarProyectoComponent } from './listar-proyecto/listar-proyecto.component';
 import { ProyectoAsignarAsesorComponent } from './listar-proyecto-asignar-asesor/listar-proyecto-asignar-asesor.component';
 import { ConfirmarAsesorMetodologicoComponent } from './shared/confirmar-asesor-metodologico/confirmar-asesor-metodologico.component';
+import { RegistrarProyectoComponent } from './shared/registrar-proyecto/registrar-proyecto.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import { ConfirmarAsesorMetodologicoComponent } from './shared/confirmar-asesor-
         RegistrarComiteComponent,
         ListarProyectoComponent,
         ProyectoAsignarAsesorComponent,
-        ConfirmarAsesorMetodologicoComponent
+        ConfirmarAsesorMetodologicoComponent,
+        RegistrarProyectoComponent
     ],
     imports: [
         indexRoutesModule,
