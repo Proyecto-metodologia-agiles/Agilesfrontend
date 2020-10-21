@@ -18,6 +18,7 @@ import { ServiceEstudianteService } from '../../services/estudiante.service';
 import { MiembroComiteService } from 'src/services/comite.service';
 import { ListarProyectoComponent } from './listar-proyecto/listar-proyecto.component';
 import { ProyectoAsignarAsesorComponent } from './listar-proyecto-asignar-asesor/listar-proyecto-asignar-asesor.component';
+import { ConfirmarAsesorMetodologicoComponent } from './shared/confirmar-asesor-metodologico/confirmar-asesor-metodologico.component';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import { ProyectoAsignarAsesorComponent } from './listar-proyecto-asignar-asesor
         RegistrarComiteComponent,
         ListarProyectoComponent,
         ProyectoAsignarAsesorComponent,
+        ConfirmarAsesorMetodologicoComponent
     ],
     imports: [
         indexRoutesModule,
@@ -42,7 +44,7 @@ import { ProyectoAsignarAsesorComponent } from './listar-proyecto-asignar-asesor
         HttpClientModule
     ],
     providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService],
-    entryComponents: [AsesoresComponent, InicioComponent, RegistrarAsesorComponent, EstudianteComponent, RegistrarEstudianteComponent, MiembrosComiteComponent, ProyectoAsignarAsesorComponent],
+    entryComponents: [AsesoresComponent, InicioComponent, RegistrarAsesorComponent, EstudianteComponent, RegistrarEstudianteComponent, MiembrosComiteComponent, ProyectoAsignarAsesorComponent, ConfirmarAsesorMetodologicoComponent],
     bootstrap: [IndexComponent]
 })
 export class IndexModule { }

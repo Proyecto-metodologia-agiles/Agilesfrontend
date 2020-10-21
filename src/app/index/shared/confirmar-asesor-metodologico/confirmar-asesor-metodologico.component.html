@@ -1,0 +1,58 @@
+<h2 mat-dialog-title>Registrar nuevo asesor</h2>
+<mat-dialog-content class="mat-typography">
+    <p class="title-body font-weight-light text-wrap">Complete los siguientes datos</p>
+    <form (ngSubmit)="form.form.valid && onSubmit()" #form="ngForm">
+        <div class="row">
+            <div class="col-12">
+                <mat-form-field appearance="outline" class="mat-form-field w-100">
+                    <mat-label>Titulo del proyecto</mat-label>
+                    <input type="text" matInput placeholder="Digitar titulo del proyecto" name="titulorpoyecto">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <mat-form-field appearance="outline" class="mat-form-field w-100">
+                    <mat-label>Asesor Metodologico (Sugerido por el estudiante)</mat-label>
+                    <input type="email" matInput placeholder="Digitar nombre del estudiante" name="asesorproyecto"
+                        required>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <mat-form-field appearance="outline" class="mat-form-field w-100">
+                    <mat-label>Asesor Metodologico a asignar (Seleccione)</mat-label>
+                    <input type="email" matInput placeholder="Digitar nombre" name="asesorproyectoselect" required>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="mat-form-field w-100">
+                    <mat-label>Semestre</mat-label>
+                    <mat-select name="semestre">
+                        <mat-option *ngFor="let item of Semestres" [value]="item">
+                            {{item}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="mat-form-field w-100">
+                    <mat-label>Horas asignadas</mat-label>
+                    <input type="number" matInput placeholder="Digitar Horas assignadas" name="horasproyecto" required>
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <mat-dialog-actions align="center">
+            <button mat-raised-button id="btn-color" class="mb-4" [mat-dialog-close]="true" cdkFocusInitial
+                type="submit">Guardar</button>
+            <button mat-raised-button mat-dialog-close color="warn" class="mb-4">Cancelar</button>
+        </mat-dialog-actions>
+    </form>
+</mat-dialog-content>
