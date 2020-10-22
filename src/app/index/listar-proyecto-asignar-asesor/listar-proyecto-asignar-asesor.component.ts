@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmarAsesorMetodologicoComponent } from '../shared/confirmar-asesor-metodologico/confirmar-asesor-metodologico.component';
+import { CofirmarAsesoriasComponent } from '../shared/cofirmar-asesorias/cofirmar-asesorias.component';
 
 
 
@@ -30,7 +30,7 @@ export class ProyectoAsignarAsesorComponent implements OnInit {
 
 
 	openDialog(id: any) {
-		const dialogRef = this.dialog.open(ConfirmarAsesorMetodologicoComponent, {
+		const dialogRef = this.dialog.open(CofirmarAsesoriasComponent, {
 			width: '300%',
 			data: id
 		});
