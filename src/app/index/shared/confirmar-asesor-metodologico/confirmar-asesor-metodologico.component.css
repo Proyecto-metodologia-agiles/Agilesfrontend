@@ -1,3 +1,9 @@
-.confirmar-asesor-metodologico {
-
-}
+.example-form {
+    min-width: 150px;
+    max-width: 100px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
