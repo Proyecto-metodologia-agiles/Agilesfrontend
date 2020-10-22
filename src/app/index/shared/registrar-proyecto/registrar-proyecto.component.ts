@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Anteproyecto } from 'src/models/anteproyecto';
+import { ServiceAnteproyectoService } from 'src/services/anteproyecto.service';
+import bsCustomFileInput from 'bs-custom-file-input';
 
 @Component({
   selector: 'registrar-proyecto',
@@ -10,9 +13,20 @@ export class RegistrarProyectoComponent implements OnInit {
   Lineas = ['Psicología Educativa','Psicología y las Organizaciones','Psicología en Contextos Sociales y Culturales','Psicología de la Familia','Psicología Clínica y de la Salud'];
   Asesor = ['Andrea','Andres'];
   Estudiante = ['luis'];
+  anteproyecto = new Anteproyecto;
   constructor() { }
 
   ngOnInit(): void {
+    bsCustomFileInput.init()
   }
 
+  onFileChange(event){
+    this.anteproyecto.Archive = event.target.files;
+    console.log(event);
+  }
+
+  async onSubmit() {
+    console.log(this.anteproyecto);
+    //this.anteproyectoservice.addAnteproyecto(this.anteproyecto);
+  }
 }
