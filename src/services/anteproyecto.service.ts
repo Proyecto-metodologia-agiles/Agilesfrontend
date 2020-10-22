@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Anteproyecto } from 'src/models/anteproyecto';
 
 const URLANTEPROYECTO_GET = 'https://localhost:44325/api/Anteproyecto/Anteproyectos';
-const URLANTEPROYECTO_GUARDAR = 'https://localhost:44325/api/Anteproyecto/Post';
+const URLANTEPROYECTO_GUARDAR = 'http://localhost:44325/api/Project/Post';
 @Injectable({ providedIn: 'root' })
 export class ServiceAnteproyectoService {
     constructor(private httpClient: HttpClient) { }

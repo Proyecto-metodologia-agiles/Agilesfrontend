@@ -14,7 +14,7 @@ export class RegistrarProyectoComponent implements OnInit {
   Asesor = ['Andrea','Andres'];
   Estudiante = ['luis'];
   anteproyecto = new Anteproyecto;
-  constructor() { }
+  constructor(private anteproyectoservice: ServiceAnteproyectoService) { }
 
   ngOnInit(): void {
     bsCustomFileInput.init()
@@ -26,7 +26,7 @@ export class RegistrarProyectoComponent implements OnInit {
   }
 
   async onSubmit() {
-    console.log(this.anteproyecto);
-    //this.anteproyectoservice.addAnteproyecto(this.anteproyecto);
+    //console.log(this.anteproyecto);
+    this.anteproyectoservice.addAnteproyecto(this.anteproyecto);
   }
 }
