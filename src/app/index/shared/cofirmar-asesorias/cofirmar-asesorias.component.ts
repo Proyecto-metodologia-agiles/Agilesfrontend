@@ -4,18 +4,19 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
+
 export interface User {
 	name: string;
 }
 
 @Component({
-	selector: 'confirmarasesor-metodologico',
-	templateUrl: './confirmar-asesor-metodologico.component.html',
-	styleUrls: ['./confirmar-asesor-metodologico.component.css']
+	selector: 'cofirmar-asesorias',
+	templateUrl: './cofirmar-asesorias.component.html',
+	styleUrls: ['./cofirmar-asesorias.component.css']
 })
 
-export class ConfirmarAsesorMetodologicoComponent implements OnInit {
-	Semestres = ['Corte 1', 'Corte 2'];
+export class CofirmarAsesoriasComponent implements OnInit {
+	Cortes = ['Corte 1', 'Corte 2'];
 	tempdata: User[] = [
 		{ name: 'Alejandro garcia lopez' },
 		{ name: 'Andrea de la hoz' },
@@ -25,7 +26,6 @@ export class ConfirmarAsesorMetodologicoComponent implements OnInit {
 	filteredOptions: Observable<User[]>;
 	constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
 	}
-
 	ngOnInit() {
 		this.filteredOptions = this.myControl.valueChanges
 			.pipe(
