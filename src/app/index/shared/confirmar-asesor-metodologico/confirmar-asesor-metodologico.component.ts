@@ -15,7 +15,7 @@ export interface User {
 })
 
 export class ConfirmarAsesorMetodologicoComponent implements OnInit {
-	Semestres = ['Corte 1', 'Corte 2'];
+	Cortes = ['Corte 1', 'Corte 2'];
 	tempdata: User[] = [
 		{ name: 'Alejandro garcia lopez' },
 		{ name: 'Andrea de la hoz' },
