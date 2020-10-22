@@ -13,6 +13,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import { MatSelectModule } from '@angular/material/select';
         MatExpansionModule,
         MatTableModule,
         MatPaginatorModule,
-        MatSelectModule
+        MatSelectModule,
+        MatAutocompleteModule
     ],
     exports: [
         MatInputModule,
@@ -45,7 +47,8 @@ import { MatSelectModule } from '@angular/material/select';
         MatExpansionModule,
         MatTableModule,
         MatPaginatorModule,
-        MatSelectModule
+        MatSelectModule,
+        MatAutocompleteModule
     ]
 })
 export class AngularMaterialModule { }

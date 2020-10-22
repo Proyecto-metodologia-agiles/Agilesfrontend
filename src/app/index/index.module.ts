@@ -46,7 +46,6 @@ import { RegistrarProyectoComponent } from './shared/registrar-proyecto/registra
         HttpClientModule
     ],
     providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService],
-    entryComponents: [AsesoresComponent, InicioComponent, RegistrarAsesorComponent, EstudianteComponent, RegistrarEstudianteComponent, MiembrosComiteComponent, ProyectoAsignarAsesorComponent, ConfirmarAsesorMetodologicoComponent],
     bootstrap: [IndexComponent]
 })
 export class IndexModule { }
