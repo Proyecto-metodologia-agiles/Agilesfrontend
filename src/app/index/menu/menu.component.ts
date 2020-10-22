@@ -25,4 +25,13 @@ export class MenuComponent implements OnInit {
 		this.opcion.emit(options);
 	}
 
+	openDialog() {
+		const dialogRef = this.dialog.open(RegistrarProyectoComponent, {
+			width: '300%',
+		});
+		dialogRef.afterClosed().subscribe(result => {
+			console.log(`Dialog result: ${result}`);
+		});
+	}
+
 }
