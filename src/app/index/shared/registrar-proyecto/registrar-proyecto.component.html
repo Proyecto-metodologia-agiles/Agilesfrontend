@@ -59,7 +59,7 @@
                     <mat-form-field appearance="outline" class="mat-form-field w-100">
                         <mat-label>Asesor Metodológico (Sugerido)</mat-label>
                         <mat-select name="methodologic_advisor" [(ngModel)]="anteproyecto.Methodologic_Advisor">
-                            <mat-option *ngFor="let item of Asesor" [value]="item">
+                            <mat-option *ngFor="let item of AsesorMetodologico" [value]="item">
                                 {{item}}
                             </mat-option>
                         </mat-select>
@@ -69,7 +69,7 @@
                     <mat-form-field appearance="outline" class="mat-form-field w-100">
                         <mat-label>Asesor Temático (Sugerido)</mat-label>
                         <mat-select name="thematic_advisor" [(ngModel)]="anteproyecto.Thematic_Advisor">
-                            <mat-option *ngFor="let item of Asesor" [value]="item">
+                            <mat-option *ngFor="let item of AsesorTematico" [value]="item">
                                 {{item}}
                             </mat-option>
                         </mat-select>

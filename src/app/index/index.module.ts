@@ -20,6 +20,7 @@ import { ListarProyectoComponent } from './listar-proyecto/listar-proyecto.compo
 import { ProyectoAsignarAsesorComponent } from './listar-proyecto-asignar-asesor/listar-proyecto-asignar-asesor.component';
 import { RegistrarProyectoComponent } from './shared/registrar-proyecto/registrar-proyecto.component';
 import { CofirmarAsesoriasComponent } from './shared/cofirmar-asesorias/cofirmar-asesorias.component';
+import { ServiceAnteproyectoService } from 'src/services/anteproyecto.service';
 
 @NgModule({
     declarations: [
@@ -45,7 +46,7 @@ import { CofirmarAsesoriasComponent } from './shared/cofirmar-asesorias/cofirmar
         ReactiveFormsModule,
         HttpClientModule
     ],
-    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService],
+    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService, ServiceAnteproyectoService],
     bootstrap: [IndexComponent]
 })
 export class IndexModule { }
