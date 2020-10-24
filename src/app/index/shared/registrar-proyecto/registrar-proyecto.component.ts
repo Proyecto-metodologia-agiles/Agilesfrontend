@@ -45,7 +45,6 @@ export class RegistrarProyectoComponent implements OnInit {
     console.log(event);
   }
 
-  onSubmit() {
     this.anteproyectoservice.addAnteproyecto(this.anteproyecto);
   }
 }
