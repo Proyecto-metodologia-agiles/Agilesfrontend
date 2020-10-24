@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { asesores } from 'src/models/asesores';
 
 const URLASESOR_GET = 'http://localhost:44325/api/Asesor/Asesores';
-const URLASESORMETODOLOGICO_GET = 'http://localhost:44325/api/Asesor/Asesores';
-const URLASESORTEMATICO_GET = 'http://localhost:44325/api/Asesor/Asesores';
+const URLASESORMETODOLOGICO_GET = 'http://localhost:44325/api/Asesor/AsesoresMetodologicos';
+const URLASESORTEMATICO_GET = 'http://localhost:44325/api/Asesor/AsesoresTematicos';
 const URLASESOR_GUARDAR = 'http://localhost:44325/api/Asesor/Post';
 @Injectable({ providedIn: 'root' })
 export class ServiceAsesorService {
