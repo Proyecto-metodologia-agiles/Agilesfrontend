@@ -21,6 +21,7 @@ import { ProyectoAsignarAsesorComponent } from './listar-proyecto-asignar-asesor
 import { RegistrarProyectoComponent } from './shared/registrar-proyecto/registrar-proyecto.component';
 import { CofirmarAsesoriasComponent } from './shared/cofirmar-asesorias/cofirmar-asesorias.component';
 import { ServiceAnteproyectoService } from 'src/services/anteproyecto.service';
+import { ServiceAsesoriasService } from 'src/services/asesorias.service';
 
 @NgModule({
     declarations: [
@@ -46,7 +47,7 @@ import { ServiceAnteproyectoService } from 'src/services/anteproyecto.service';
         ReactiveFormsModule,
         HttpClientModule
     ],
-    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService, ServiceAnteproyectoService],
+    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService, ServiceAnteproyectoService,ServiceAsesoriasService],
     bootstrap: [IndexComponent]
 })
 export class IndexModule { }
