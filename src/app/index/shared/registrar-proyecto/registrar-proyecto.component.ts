@@ -29,11 +29,11 @@ export class RegistrarProyectoComponent implements OnInit {
     bsCustomFileInput.init();
     (await this.asesorService.getAsesoresMetodologicos()).subscribe(Response => {
       this.AsesorMetodologico = Response;
-      console.log(this.AsesorMetodologico);
+
     });
     (await this.asesorService.getAsesoresTematicos()).subscribe(Response => {
       this.AsesorTematico = Response;
-      console.log(this.AsesorTematico);
+
     });
     (await this.estudianteService.getEstudiantesSinProyecto()).subscribe(Response => {
       this.Estudiante = Response;
@@ -42,7 +42,7 @@ export class RegistrarProyectoComponent implements OnInit {
 
   onFileChange(event){
     this.anteproyecto.Archive = <File> event.target.files[0];
-    console.log(event);
+
   }
 
   onSubmit() {

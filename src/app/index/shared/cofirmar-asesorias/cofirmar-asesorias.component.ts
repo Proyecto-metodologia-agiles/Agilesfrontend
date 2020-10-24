@@ -3,11 +3,12 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { ServiceAsesorService } from 'src/services/asesor.service';
+import { ServiceAsesoriasService } from 'src/services/asesorias.service';
+import { asesores } from 'src/models/asesores';
+import { asesorias } from 'src/models/asesorias';
 
 
-export interface User {
-	name: string;
-}
 
 @Component({
 	selector: 'cofirmar-asesorias',
@@ -17,36 +18,40 @@ export interface User {
 
 export class CofirmarAsesoriasComponent implements OnInit {
 	Cortes = ['Corte 1', 'Corte 2'];
-	tempdata: User[] = [
-		{ name: 'Alejandro garcia lopez' },
-		{ name: 'Andrea de la hoz' },
-		{ name: 'Grabiel garcia marquez' },
-		{ name: 'fernadez alonso' }]
+	public AsesorMetodologico:asesores[]= [];
+	public AsesorTematico:asesores[]= [];
+	asesorias = new asesorias();
+
 	myControl = new FormControl();
-	filteredOptions: Observable<User[]>;
-	constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+	myContro2 = new FormControl();
+	filteredOptions: Observable<asesores[]>;
+	constructor(@Inject(MAT_DIALOG_DATA) public data: any,  private asesorService:ServiceAsesorService,private asesoriasServe:ServiceAsesoriasService) {
 	}
-	ngOnInit() {
-		this.filteredOptions = this.myControl.valueChanges
-			.pipe(
-				startWith(''),
-				map(value => typeof value === 'string' ? value : value.name),
-				map(name => name ? this._filter(name) : this.tempdata.slice())
-			);
+	async ngOnInit() {
+		(await this.asesorService.getAsesoresMetodologicos()).subscribe(Response => {
+			this.AsesorMetodologico = Response;
+		  });
+		  (await this.asesorService.getAsesoresTematicos()).subscribe(Response => {
+			this.AsesorTematico = Response;
+		  });
+		
+		  console.log(this.data);
 	}
 
 	async onSubmit() {
-		console.log("guardar");
 
+		this.asesorias.TituloProyecto = this.data.title;
+	
+		this.asesoriasServe.addAsesorias(this.asesorias);
+       
 	}
 
-	displayFn(user: User): string {
-		return user && user.name ? user.name : '';
+	displayFn(user: asesores): string {
+		return user && user.Name_Complet ? user.Name_Complet : '';
 	}
 
-	private _filter(name: string): User[] {
+	private _filter(name: string): asesores[] {
 		const filterValue = name.toLowerCase();
-
-		return this.tempdata.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
+		return this.AsesorMetodologico.filter(option => option.Name_Complet.toLowerCase().indexOf(filterValue) === 0);
 	}
 }
