@@ -44,7 +44,7 @@ export class RegistrarProyectoComponent implements OnInit {
     this.anteproyecto.Archive = <File> event.target.files[0];
 
   }
-
+  onSubmit(){
     this.anteproyectoservice.addAnteproyecto(this.anteproyecto);
   }
 }
