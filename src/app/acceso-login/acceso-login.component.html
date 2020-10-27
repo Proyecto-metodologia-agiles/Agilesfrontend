@@ -1,0 +1,30 @@
+<div class="container-page">
+    <img class="fondoPrincipal" src="../../assets/Logofondologin.jpg">
+    <mat-card>
+        <div class="row">
+            <div class="col-7">
+                <img class="logo_lateral_login" src="../../assets/logo_login_lateral.png">
+
+            </div>
+            <div class="col-5 lateral_derecho">
+                <mat-card-content>
+                    <mat-card-title>Inicio de sesion</mat-card-title>
+                    <form (ngSubmit)="form.form.valid && onSubmit()" #form="ngForm">
+                        <mat-form-field appearance="outline" class="mat-form-field w-100">
+                            <mat-label>Correo electronico</mat-label>
+                            <input type="email" matInput placeholder="Digitar correo electronico" name="correoAsesor"
+                                [(ngModel)]="AccesoLogin.Email" required>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="mat-form-field w-100">
+                            <mat-label>Contraseña</mat-label>
+                            <input type="password" matInput placeholder="Diguitar contraseña" name="telefonoAsesor"
+                                [(ngModel)]="AccesoLogin.Password" required>
+                        </mat-form-field>
+                        <button mat-raised-button class="btn-login" type="submit">Iniciar sesion</button>
+                    </form>
+                </mat-card-content>
+
+            </div>
+        </div>
+    </mat-card>
+</div>
