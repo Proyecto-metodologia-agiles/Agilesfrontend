@@ -8,6 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AngularMaterialModule } from '../angularmaterial.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { EstudianteComponent } from './estudiantes/estudiantes.component';
+import { ListarEstudiantesComponent } from './estudiantes/listar-estudiantes/listar-estudiantes.component';
 import { AsesoresComponent } from './asesores/asesores.component';
 import { RegistrarAsesorComponent } from './shared/registrar-asesor/registrar-asesor.component';
 import { RegistrarEstudianteComponent } from './shared/registrar-estudiante/registrar-estudiante.component';
@@ -29,6 +30,7 @@ import { ServiceAsesoriasService } from 'src/services/asesorias.service';
         InicioComponent,
         MenuComponent,
         EstudianteComponent,
+        ListarEstudiantesComponent,
         AsesoresComponent,
         RegistrarAsesorComponent,
         RegistrarEstudianteComponent,
@@ -47,7 +49,7 @@ import { ServiceAsesoriasService } from 'src/services/asesorias.service';
         ReactiveFormsModule,
         HttpClientModule
     ],
-    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService, ServiceAnteproyectoService,ServiceAsesoriasService],
+    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService, ServiceAnteproyectoService, ServiceAsesoriasService],
     bootstrap: [IndexComponent]
 })
 export class IndexModule { }

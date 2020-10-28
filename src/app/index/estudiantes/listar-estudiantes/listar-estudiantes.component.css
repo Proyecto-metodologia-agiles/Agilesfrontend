@@ -14,10 +14,6 @@
     width: 100%;
 }
 
-.container-body{
-    margin-top: 10px;
-}
-
 .title-body{
     text-align: left;
 }
@@ -29,14 +25,4 @@
 
 .ubication{
     margin-right: 13px;
-}
-
-
-.icon-position{
-    margin-right: -27px;
-    margin-top: 2px;
-}
-
-.text-aling{
-    text-align: justify;
 }
