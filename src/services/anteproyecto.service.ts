@@ -5,12 +5,17 @@ import { isInteger, toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 const URLANTEPROYECTO_GET = 'http://localhost:44325/api/Project/Proyectos';
 const URLANTEPROYECTO_GUARDAR = 'http://localhost:44325/api/Project/Post';
+const URLANTEPROYECTO_GET_ADVISOR = 'http://localhost:44325/api/Project/Proyectos';
 @Injectable({ providedIn: 'root' })
 export class ServiceAnteproyectoService {
     constructor(private httpClient: HttpClient) { }
 
     async getAnteproyecto() {
         return this.httpClient.get<Anteproyecto[]>(URLANTEPROYECTO_GET);
+    }
+
+    async getAnteproyectoAsesor() {
+        return this.httpClient.get<Anteproyecto[]>(URLANTEPROYECTO_GET_ADVISOR);
     }
 
     addAnteproyecto(anteproyecto: Anteproyecto) {
