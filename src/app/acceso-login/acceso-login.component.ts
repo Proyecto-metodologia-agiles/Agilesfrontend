@@ -10,13 +10,22 @@ export class AccesoLoginComponent implements OnInit {
   AccesoLogin = new Login();
 
 
-  constructor() { }
+  constructor() {
+    // this.AccesoLoginService.sesionEvent.subscribe(
+    //   (Response: Login) => this.onSesionLogin(Response),
+    //   error => console.log(error));
+  }
 
   ngOnInit(): void {
   }
   onSubmit() {
-    console.log(this.AccesoLogin);
+    // this.AccesoLoginService.onCreateSessions(this.AccesoLogin);
   }
+
+  // onSesionLogin(sesion: Login) {
+  //   let response = this.AccesoLoginService.onComprobarSesion(sesion);
+
+  // }
 
 
 }

@@ -45,7 +45,7 @@
                     </mat-list-item>
 
                     <mat-list-item>
-                        <h6 (click)="openDialog()"> 
+                        <h6 (click)="openDialog()">
                             <mat-icon class="icon-aling" mat-icon>bar_chart</mat-icon>Proyecto (Egresado)
                         </h6>
                     </mat-list-item>
@@ -88,11 +88,6 @@
     </mat-toolbar>
 
     <div class="main contents">
-        <index-inicio *ngIf="seleccionado === 'inicio'"></index-inicio>
-        <index-estudiantes *ngIf="seleccionado === 'estudiantes'"></index-estudiantes>
-        <index-asesores *ngIf="seleccionado === 'asesores'"></index-asesores>
-        <index-miembros-comite *ngIf="seleccionado === 'miembroComite'"></index-miembros-comite>
-        <index-listar-proyecto *ngIf="seleccionado === 'listarProyecto'"></index-listar-proyecto>
-        <listar-proyecto-asignar *ngIf="seleccionado === 'listarProyectoAsignar'"></listar-proyecto-asignar>
+        <ng-content></ng-content>
     </div>
 </mat-drawer-container>
