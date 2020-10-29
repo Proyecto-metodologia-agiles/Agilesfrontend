@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MiembroComite } from 'src/models/miembroComite';
+import Swal from 'sweetalert2';
 
 const URL_MIEMBRO_POST = 'http://localhost:44325/api/CommitteeMember/Post'
 const URL_MIEMBRO_GET = 'http://localhost:44325/api/CommitteeMember/MiembrosComite'
@@ -28,11 +29,20 @@ export class MiembroComiteService {
 
 
     addmiembroComite(comite: MiembroComite) {
-        this.httpClient.post(URL_MIEMBRO_POST, comite).subscribe(
-            (resp) => {
-                console.log(resp)
-                return resp;
-            });
+        this.httpClient.post(URL_MIEMBRO_POST, comite).subscribe(Response => {Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'El Miembro del Comité ha sido guardado con éxito',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }, error => {Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Problemas al intentar guardar el miembro del comité',
+            showConfirmButton: false,
+            timer: 1500
+          });});
     }
 
 }
