@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Anteproyecto } from 'src/models/anteproyecto';
 import { isInteger, toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
+import Swal from 'sweetalert2';
 
 const URLANTEPROYECTO_GET = 'http://localhost:44325/api/Project/Proyectos';
 const URLANTEPROYECTO_GUARDAR = 'http://localhost:44325/api/Project/Post';
@@ -35,11 +36,20 @@ export class ServiceAnteproyectoService {
         console.log(anteproyecto);
         
         
-        this.httpClient.post(URLANTEPROYECTO_GUARDAR, datos).subscribe(
-            (resp) => {
-                console.log(resp)
-                return resp;
-            });
+        this.httpClient.post(URLANTEPROYECTO_GUARDAR, datos).subscribe(Response => {Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'El AnteProyecto ha sido guardado con éxito',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }, error => {Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Problemas al intentar guardar el anteproyecto',
+            showConfirmButton: false,
+            timer: 1500
+          });});
             
             
     }

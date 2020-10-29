@@ -9,7 +9,12 @@
         <div class="main-itemcontes">
             <mat-nav-list>
                 <mat-accordion multi="true" class="example-headers-align">
-                    <mat-expansion-panel [class.mat-elevation-z0]="true">
+                    <mat-list-item>
+                        <h6 (click)="cambiarOpcion('estudiantes')">
+                            <mat-icon class="icon-aling" mat-icon>account_circle</mat-icon> Estudiantes
+                        </h6>
+                    </mat-list-item>
+                    <!--<mat-expansion-panel [class.mat-elevation-z0]="true">
                         <mat-expansion-panel-header>
                             <h6>
                                 <mat-icon class="icon-aling" mat-icon>account_circle</mat-icon> Estudiantes
@@ -24,40 +29,40 @@
                         <mat-list-item>
                             <a>Graduados</a>
                         </mat-list-item>
-                    </mat-expansion-panel>
+                    </mat-expansion-panel>-->
 
                     <mat-list-item>
                         <h6 (click)="cambiarOpcion('asesores')">
-                            <mat-icon class="icon-aling" mat-icon>people</mat-icon>Asesores
+                            <mat-icon class="icon-aling" mat-icon>person</mat-icon> Asesores
                         </h6>
                     </mat-list-item>
 
                     <mat-list-item>
                         <h6 (click)="cambiarOpcion('miembroComite')">
-                            <mat-icon class="icon-aling" mat-icon>people</mat-icon>Comite
+                            <mat-icon class="icon-aling" mat-icon>people</mat-icon> Miembros del Comité
                         </h6>
                     </mat-list-item>
 
                     <mat-list-item>
                         <h6 (click)="cambiarOpcion('listarProyecto')">
-                            <mat-icon class="icon-aling" mat-icon>bar_chart</mat-icon>Proyecto (Estudiantes)
+                            <mat-icon class="icon-aling" mat-icon>bar_chart</mat-icon> AnteProyectos Registrados
                         </h6>
                     </mat-list-item>
 
                     <mat-list-item>
                         <h6 (click)="openDialog()">
-                            <mat-icon class="icon-aling" mat-icon>bar_chart</mat-icon>Proyecto (Egresado)
+                            <mat-icon class="icon-aling" mat-icon>book</mat-icon> Registar AnteProyecto
                         </h6>
                     </mat-list-item>
                     <mat-list-item>
                         <h6>
-                            <mat-icon class="icon-aling" mat-icon>check_box</mat-icon>Valorar Proyecto
+                            <mat-icon class="icon-aling" mat-icon>check_box</mat-icon> Valorar AnteProyecto
                         </h6>
                     </mat-list-item>
-                    <mat-expansion-panel [class.mat-elevation-z0]="true">
+                    <!--<mat-expansion-panel [class.mat-elevation-z0]="true">
                         <mat-expansion-panel-header>
                             <h6 (click)="cambiarOpcion('listarProyectoAsignar')">
-                                <mat-icon class="icon-aling" mat-icon>person</mat-icon>Asignar Asesor
+                                <mat-icon class="icon-aling" mat-icon>how_to_reg</mat-icon>Asignar Asesor
                             </h6>
                         </mat-expansion-panel-header>
                         <mat-list-item>
@@ -67,8 +72,12 @@
 
                             <p>Egresados</p>
                         </mat-list-item>
-                    </mat-expansion-panel>
-
+                    </mat-expansion-panel>-->
+                    <mat-list-item>
+                        <h6 (click)="cambiarOpcion('listarProyectoAsignar')">
+                            <mat-icon class="icon-aling" mat-icon>how_to_reg</mat-icon> Asignar Asesor
+                        </h6>
+                    </mat-list-item>
                 </mat-accordion>
             </mat-nav-list>
         </div>
