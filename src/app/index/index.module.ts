@@ -13,6 +13,7 @@ import { AsesoresComponent } from './asesores/asesores.component';
 import { RegistrarAsesorComponent } from './shared/registrar-asesor/registrar-asesor.component';
 import { RegistrarEstudianteComponent } from './shared/registrar-estudiante/registrar-estudiante.component';
 import { MiembrosComiteComponent } from './miembros-comite/miembros-comite.component';
+import { GestionComiteComponent } from './miembros-comite/Gestion-Comite/Gestion-Comite.component';
 import { RegistrarComiteComponent } from './shared/registrar-comite/registrar-comite.component';
 import { ServiceAsesorService } from '../../services/asesor.service';
 import { ServiceEstudianteService } from '../../services/estudiante.service';
@@ -36,6 +37,7 @@ import { ListarProyectosAsignadosComponent } from './asesores/listar-proyectos-a
         RegistrarAsesorComponent,
         RegistrarEstudianteComponent,
         MiembrosComiteComponent,
+        GestionComiteComponent,
         RegistrarComiteComponent,
         ListarProyectoComponent,
         ProyectoAsignarAsesorComponent,

@@ -13,7 +13,7 @@
     text-align: center;
     width: 100%;
 }
- 
+
 .title-body{
     text-align: left;
 }
@@ -21,28 +21,4 @@
 #btn-color{
     color: #ffffff;
     background-color: #339240 !important;
-}
-
-.ubication{
-    margin-right: 13px;
-}
-
-
-.icon-position{
-    margin-right: -27px;
-    margin-top: 2px;
-}
-
-.text-aling{
-    text-align: justify;
-}
-
-.contenedor{
-  margin-top: 5px;
-}
-
-.card-ubications{
-    width: 250px;
-     margin-right:5px;
-     margin-bottom: 10px;
 }
