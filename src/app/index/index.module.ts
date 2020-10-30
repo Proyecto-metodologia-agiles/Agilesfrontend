@@ -25,6 +25,7 @@ import { CofirmarAsesoriasComponent } from './shared/cofirmar-asesorias/cofirmar
 import { ServiceAnteproyectoService } from 'src/services/anteproyecto.service';
 import { ServiceAsesoriasService } from 'src/services/asesorias.service';
 import { ListarProyectosAsignadosComponent } from './asesores/listar-proyectos-asignados/listar-proyectos-asignados.component';
+import { ListarAsesoresComponent } from './asesores/listar-asesores/listar-asesores.component';
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import { ListarProyectosAsignadosComponent } from './asesores/listar-proyectos-a
         ProyectoAsignarAsesorComponent,
         CofirmarAsesoriasComponent,
         RegistrarProyectoComponent,
-        ListarProyectosAsignadosComponent
+        ListarProyectosAsignadosComponent,
+        ListarAsesoresComponent
     ],
     imports: [
         indexRoutesModule,
