@@ -7,12 +7,17 @@ import Swal from 'sweetalert2';
 const URLANTEPROYECTO_GET = 'http://localhost:44325/api/Project/Proyectos';
 const URLANTEPROYECTO_GUARDAR = 'http://localhost:44325/api/Project/Post';
 const URLANTEPROYECTO_GET_ADVISOR = 'http://localhost:44325/api/Project/Proyectos';
+const URLANTEPROYECTO_GET_ASIGNADOS = 'http://localhost:44325/api/Project/Proyectos';
 @Injectable({ providedIn: 'root' })
 export class ServiceAnteproyectoService {
     constructor(private httpClient: HttpClient) { }
 
     async getAnteproyecto() {
         return this.httpClient.get<Anteproyecto[]>(URLANTEPROYECTO_GET);
+    }
+
+    async getAnteproyectAsignados() {
+        return this.httpClient.get<Anteproyecto[]>(URLANTEPROYECTO_GET_ASIGNADOS);
     }
 
     async getAnteproyectoAsesor() {
@@ -26,7 +31,7 @@ export class ServiceAnteproyectoService {
         datos.append("Title", anteproyecto.Title);
         datos.append('Archive', anteproyecto.Archive);
         datos.append("Focus", anteproyecto.Focus);
-        datos.append("Cut" ,  anteproyecto.Cut.toString());
+        datos.append("Cut", anteproyecto.Cut.toString());
         datos.append("Line", anteproyecto.Line);
         datos.append("Thematic_Advisor", anteproyecto.Thematic_Advisor.toString())
         datos.append("Metodologic_Advisor", anteproyecto.Methodologic_Advisor.toString());
@@ -34,24 +39,27 @@ export class ServiceAnteproyectoService {
         datos.append("Student_2", anteproyecto.Student_2);
 
         console.log(anteproyecto);
-        
-        
-        this.httpClient.post(URLANTEPROYECTO_GUARDAR, datos).subscribe(Response => {Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'El AnteProyecto ha sido guardado con éxito',
-            showConfirmButton: false,
-            timer: 1500
-          });
-        }, error => {Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: 'Problemas al intentar guardar el anteproyecto',
-            showConfirmButton: false,
-            timer: 1500
-          });});
-            
-            
+
+
+        this.httpClient.post(URLANTEPROYECTO_GUARDAR, datos).subscribe(Response => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'El AnteProyecto ha sido guardado con éxito',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }, error => {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Problemas al intentar guardar el anteproyecto',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+
+
     }
 
 }
