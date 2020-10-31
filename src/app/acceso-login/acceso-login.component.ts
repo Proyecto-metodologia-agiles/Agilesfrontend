@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from 'src/models/login';
 import { LoginService } from 'src/services/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-acceso-login',
@@ -32,7 +33,15 @@ export class AccesoLoginComponent implements OnInit {
           sessionStorage.setItem('_sesion', JSON.stringify(Response));
           Response.type == 'Miembro Comite' || Response.type == 'Asesor' || Response.type == 'Estudiante' ? this.routes.navigateByUrl('index') : this.routes.navigateByUrl('login');
         },
-        error => console.log(error)
+        error => {
+          Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Datos ingresados Incorrectos',
+              showConfirmButton: false,
+              timer: 1500
+          });
+      }
       ) : null;
 
   }

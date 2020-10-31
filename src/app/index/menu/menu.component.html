@@ -9,12 +9,12 @@
         <div class="main-itemcontes">
             <mat-nav-list>
                 <mat-accordion multi="true" class="example-headers-align">
-                    <menu-estudiante *ngIf="session.type == 'Estudiante' || session.type == 'Miembro Comite'"></menu-estudiante>
                     <menu-miembro-comite *ngIf="session.type == 'Miembro Comite'"></menu-miembro-comite>
+                    <menu-estudiante *ngIf="session.type == 'Estudiante' || session.type == 'Miembro Comite'"></menu-estudiante>
                     <menu-asesor *ngIf="session.type == 'Asesor' || session.type == 'Miembro Comite'"></menu-asesor>
                     <mat-list-item>
                         <h6 (click)="cerrarSesion()">
-                            <mat-icon class="icon-aling" mat-icon>how_to_reg</mat-icon> Cerrar Sesión
+                            <mat-icon class="icon-aling" mat-icon>close</mat-icon> Cerrar Sesión
                         </h6>
                     </mat-list-item>
                 </mat-accordion>
@@ -27,7 +27,7 @@
         <mat-icon *ngIf="!drawer.opened" (click)="drawer.toggle()">
             menu
         </mat-icon>
-        <div class="HeaderStyle">Universidad popular del cesar</div>
+        <div class="HeaderStyle">Universidad Popular del Cesar</div>
         <span class="example-spacer"></span>
         <button mat-icon-button>
             <mat-icon class="icon-header">person</mat-icon>
