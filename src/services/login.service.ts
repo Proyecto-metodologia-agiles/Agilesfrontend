@@ -46,10 +46,10 @@ export class LoginService {
     }
 
     public cerrarSesion() {
-        let token = sessionStorage.getItem('_sesion');
-        const URL_LOGOUT = '';
+        //let token = sessionStorage.getItem('_sesion');
+        //const URL_LOGOUT = '';
         sessionStorage.clear();
-        return this.httpClient.post(URL_LOGOUT, { headers: headersLogin });
+        //return this.httpClient.post(URL_LOGOUT, { headers: headersLogin });
     }
 
     public sesionValida(login: Login) {

@@ -28,6 +28,9 @@ import { ListarProyectosAsignadosComponent } from './asesores/listar-proyectos-a
 import { ListarAsesoresComponent } from './asesores/listar-asesores/listar-asesores.component';
 import { ProyectosAsignadosComponent } from './listar-proyecto/proyectos-asignados/proyectos-asignados.component';
 import { LoginService } from 'src/services/login.service';
+import { MenuAsesorComponent } from './menu/menu-asesor/menu-asesor.component';
+import { MenuEstudianteComponent } from './menu/menu-estudiante/menu-estudiante.component';
+import { MenuMiembroComiteComponent } from './menu/menu-miembro-comite/menu-miembro-comite.component';
 
 @NgModule({
     declarations: [
@@ -48,7 +51,10 @@ import { LoginService } from 'src/services/login.service';
         CofirmarAsesoriasComponent,
         RegistrarProyectoComponent,
         ListarProyectosAsignadosComponent,
-        ListarAsesoresComponent
+        ListarAsesoresComponent,
+        MenuAsesorComponent,
+        MenuEstudianteComponent,
+        MenuMiembroComiteComponent
     ],
     imports: [
         indexRoutesModule,
