@@ -1,8 +1,9 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Login } from 'src/models/login';
+import { HOST_DATABASE } from 'src/database/host.database';
 
-const URL_LOGIN_POST = 'http://localhost:44325/api/CommitteeMember/Post';
+const URL_LOGIN_POST = HOST_DATABASE + 'User/Login';
 
 const headersLogin = new HttpHeaders();
 headersLogin.set('Content-Type', 'application/json');
