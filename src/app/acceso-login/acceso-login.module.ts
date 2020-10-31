@@ -6,6 +6,7 @@ import { AccesoLoginComponent } from './acceso-login.component';
 import { AccesoLoginRoutesModule } from './acceso-login.routes';
 import { MiembroComiteService } from 'src/services/comite.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from 'src/services/login.service';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
         HttpClientModule
     ],
     exports: [],
-    providers: [MiembroComiteService],
+    providers: [LoginService],
     entryComponents: [],
     bootstrap: [AccesoLoginComponent]
 })
