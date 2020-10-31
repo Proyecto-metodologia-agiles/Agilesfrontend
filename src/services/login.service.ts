@@ -32,15 +32,15 @@ export class LoginService {
     }
 
     setToken(token): void {
-        sessionStorage.setItem('_token', token);
+        sessionStorage.setItem('_sesion', token);
     }
 
     getToken() {
-        return sessionStorage.getItem('_token');
+        return sessionStorage.getItem('_sesion');
     }
 
     public cerrarSesion() {
-        let token = sessionStorage.getItem('_token');
+        let token = sessionStorage.getItem('_sesion');
         const URL_LOGOUT = '';
         sessionStorage.clear();
         return this.httpClient.post(URL_LOGOUT, { headers: headersLogin });
