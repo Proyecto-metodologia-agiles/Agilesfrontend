@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import { HOST_DATABASE } from 'src/database/host.database';
 
 const URLASESOR_GET = HOST_DATABASE + 'Asesor/Asesores';
-const URLASESORMETODOLOGICO_GET = HOST_DATABASE + 'AsesoresMetodologicos';
+const URLASESORMETODOLOGICO_GET = HOST_DATABASE + 'Asesor/AsesoresMetodologicos';
 const URLASESORTEMATICO_GET = HOST_DATABASE + 'Asesor/AsesoresTematicos';
 const URLASESOR_GUARDAR = HOST_DATABASE + 'Asesor/Post';
 @Injectable({ providedIn: 'root' })

@@ -14,7 +14,7 @@ export class MenuMiembroComiteComponent implements OnInit {
   }
 
   cambiarOpcion(options: menuOptions) {
-		this.opcion.emit(options);
-	}
+    this.opcion.emit(options);
+  }
 
 }

@@ -9,8 +9,10 @@
         <div class="main-itemcontes">
             <mat-nav-list>
                 <mat-accordion multi="true" class="example-headers-align">
-                    <menu-miembro-comite *ngIf="session.type == 'Miembro Comite'"></menu-miembro-comite>
-                    <menu-estudiante *ngIf="session.type == 'Estudiante' || session.type == 'Miembro Comite'"></menu-estudiante>
+                    <menu-miembro-comite (opcion)="cambiarOpcion($event)" *ngIf="session.type == 'Miembro Comite'">
+                    </menu-miembro-comite>
+                    <menu-estudiante *ngIf="session.type == 'Estudiante' || session.type == 'Miembro Comite'">
+                    </menu-estudiante>
                     <menu-asesor *ngIf="session.type == 'Asesor' || session.type == 'Miembro Comite'"></menu-asesor>
                     <mat-list-item>
                         <h6 (click)="cerrarSesion()">
@@ -31,7 +33,7 @@
         <span class="example-spacer"></span>
         <button mat-icon-button>
             <mat-icon class="icon-header">person</mat-icon>
-            <span class="HeaderStyle" >{{session.name}}</span>
+            <span class="HeaderStyle">{{session.name}}</span>
         </button>
     </mat-toolbar>
 

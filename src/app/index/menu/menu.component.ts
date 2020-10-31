@@ -14,17 +14,17 @@ import { Router } from '@angular/router';
 
 export class MenuComponent implements OnInit {
 	showFiller = false;
-
+	session: sesion;
 	@Output() opcion = new EventEmitter<menuOptions>();
 	seleccionado: menuOptions = 'inicio';
 	constructor(private dialog: MatDialog, private LoginService: LoginService, private PageRoutes: Router) {
 	}
 
-	session: sesion;
-  	ngOnInit(){
-    this.session = this.LoginService.getToken();
 
-  }
+	ngOnInit() {
+		this.session = this.LoginService.getToken();
+
+	}
 
 
 	cambiarOpcion(options: menuOptions) {
@@ -32,7 +32,7 @@ export class MenuComponent implements OnInit {
 		this.opcion.emit(options);
 	}
 
-	cerrarSesion(){
+	cerrarSesion() {
 		this.LoginService.cerrarSesion();
 		this.PageRoutes.navigateByUrl('/login');
 	}
