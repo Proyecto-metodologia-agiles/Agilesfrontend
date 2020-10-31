@@ -27,6 +27,7 @@ import { ServiceAsesoriasService } from 'src/services/asesorias.service';
 import { ListarProyectosAsignadosComponent } from './asesores/listar-proyectos-asignados/listar-proyectos-asignados.component';
 import { ListarAsesoresComponent } from './asesores/listar-asesores/listar-asesores.component';
 import { ProyectosAsignadosComponent } from './listar-proyecto/proyectos-asignados/proyectos-asignados.component';
+import { LoginService } from 'src/services/login.service';
 
 @NgModule({
     declarations: [
@@ -57,7 +58,7 @@ import { ProyectosAsignadosComponent } from './listar-proyecto/proyectos-asignad
         ReactiveFormsModule,
         HttpClientModule
     ],
-    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService, ServiceAnteproyectoService, ServiceAsesoriasService],
+    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService, ServiceAnteproyectoService, ServiceAsesoriasService, LoginService],
     bootstrap: [IndexComponent]
 })
 export class IndexModule { }

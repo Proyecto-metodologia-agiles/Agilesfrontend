@@ -1,1 +1,1 @@
-export type menuOptions = 'inicio' | 'estudiantes' | 'asesores' | 'miembroComite' | 'listarProyecto' | 'listarProyectoAsignar'|'registrarProyecto';
+export type menuOptions = 'inicio' | 'Estudiante' | 'Asesor' | 'Miembro Comite' | 'listarProyecto' | 'listarProyectoAsignar' | 'registrarProyecto';

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { sesion } from 'src/models/login';
+import { LoginService } from 'src/services/login.service';
 import { menuOptions } from 'src/types/types';
 
 @Component({
@@ -9,11 +11,13 @@ import { menuOptions } from 'src/types/types';
 
 export class IndexComponent implements OnInit {
 	opcionMenu: menuOptions = 'inicio';
+	_session: sesion
 
+	constructor(private LoginService: LoginService) { }
 
-	constructor() { }
-
-	ngOnInit() { }
+	ngOnInit() {
+		this.opcionMenu = this.LoginService.getTokenSession();
+	}
 
 	verOpcion(event: menuOptions) {
 		this.opcionMenu = event;

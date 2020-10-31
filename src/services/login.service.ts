@@ -2,6 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Login } from 'src/models/login';
 import { HOST_DATABASE } from 'src/database/host.database';
+import { menuOptions } from 'src/types/types';
 
 const URL_LOGIN_POST = HOST_DATABASE + 'User/Login';
 
@@ -36,7 +37,12 @@ export class LoginService {
     }
 
     getToken() {
-        return sessionStorage.getItem('_sesion');
+        return JSON.parse(sessionStorage.getItem('_sesion'));
+    }
+
+    getTokenSession(): menuOptions {
+        let session = JSON.parse(sessionStorage.getItem('_sesion'));
+        return session.type;
     }
 
     public cerrarSesion() {
