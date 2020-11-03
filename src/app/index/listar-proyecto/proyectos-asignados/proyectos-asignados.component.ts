@@ -21,15 +21,15 @@ export class ProyectosAsignadosComponent implements OnInit {
 	}
 
 	async ngOnInit() {
-		await Promise.all([
-			(await this.proyectoservice.getAnteproyectAsignados()).subscribe(
-				Response => {
-					console.log(Response);
-					this.dataSource = new MatTableDataSource(Response);
-					this.dataSource.paginator = this.paginator;
-				}
-			)
-		]);
+		// await Promise.all([
+		// 	(await this.proyectoservice.getAnteproyectAsignados()).subscribe(
+		// 		Response => {
+		// 			console.log(Response);
+		// 			this.dataSource = new MatTableDataSource(Response);
+		// 			this.dataSource.paginator = this.paginator;
+		// 		}
+		// 	)
+		// ]);
 
 	}
 }

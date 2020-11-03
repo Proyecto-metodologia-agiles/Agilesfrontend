@@ -8,7 +8,7 @@ import { HOST_DATABASE } from 'src/database/host.database';
 const URLANTEPROYECTO_GET = HOST_DATABASE + 'Project/Proyectos';
 const URLANTEPROYECTO_GUARDAR = HOST_DATABASE + 'Project/Post';
 const URLANTEPROYECTO_GET_ADVISOR = HOST_DATABASE + 'Project/Proyectos';
-const URLANTEPROYECTO_GET_ASIGNADOS = HOST_DATABASE + 'Project/Proyectos';
+const URLASESOR_POST_ASIGNADOS = HOST_DATABASE + 'Asesor/GetProyectosAsociados?id=';
 @Injectable({ providedIn: 'root' })
 export class ServiceAnteproyectoService {
     constructor(private httpClient: HttpClient) { }
@@ -17,13 +17,16 @@ export class ServiceAnteproyectoService {
         return this.httpClient.get<Anteproyecto[]>(URLANTEPROYECTO_GET);
     }
 
-    async getAnteproyectAsignados() {
-        return this.httpClient.get<Anteproyecto[]>(URLANTEPROYECTO_GET_ASIGNADOS);
+    async getAsesorAsignado(id: string) {
+        return this.httpClient.get<Anteproyecto[]>(URLASESOR_POST_ASIGNADOS + id);
     }
+
+
 
     async getAnteproyectoAsesor() {
         return this.httpClient.get<Anteproyecto[]>(URLANTEPROYECTO_GET_ADVISOR);
     }
+
 
     addAnteproyecto(anteproyecto: Anteproyecto) {
 

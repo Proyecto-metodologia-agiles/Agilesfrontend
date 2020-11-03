@@ -11,9 +11,11 @@
                 <mat-accordion multi="true" class="example-headers-align">
                     <menu-miembro-comite (opcion)="cambiarOpcion($event)" *ngIf="session.type == 'Miembro Comite'">
                     </menu-miembro-comite>
-                    <menu-estudiante *ngIf="session.type == 'Estudiante' || session.type == 'Miembro Comite'">
+                    <menu-estudiante (opcion)="cambiarOpcion($event)"
+                        *ngIf="session.type == 'Estudiante' || session.type == 'Miembro Comite'">
                     </menu-estudiante>
-                    <menu-asesor *ngIf="session.type == 'Asesor' || session.type == 'Miembro Comite'"></menu-asesor>
+                    <menu-asesor (opcion)="cambiarOpcion($event)"
+                        *ngIf="session.type == 'Asesor' || session.type == 'Miembro Comite'"></menu-asesor>
                     <mat-list-item>
                         <h6 (click)="cerrarSesion()">
                             <mat-icon class="icon-aling" mat-icon>close</mat-icon> Cerrar Sesión
