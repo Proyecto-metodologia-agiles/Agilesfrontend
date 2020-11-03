@@ -9,43 +9,16 @@
         <div class="main-itemcontes">
             <mat-nav-list>
                 <mat-accordion multi="true" class="example-headers-align">
+                    <menu-miembro-comite (opcion)="cambiarOpcion($event)" *ngIf="session.type == 'Miembro Comite'">
+                    </menu-miembro-comite>
+                    <menu-estudiante (opcion)="cambiarOpcion($event)"
+                        *ngIf="session.type == 'Estudiante' || session.type == 'Miembro Comite'">
+                    </menu-estudiante>
+                    <menu-asesor (opcion)="cambiarOpcion($event)"
+                        *ngIf="session.type == 'Asesor' || session.type == 'Miembro Comite'"></menu-asesor>
                     <mat-list-item>
-                        <h6 (click)="cambiarOpcion('estudiantes')">
-                            <mat-icon class="icon-aling" mat-icon>account_circle</mat-icon> Estudiantes
-                        </h6>
-                    </mat-list-item>
-
-                    <mat-list-item>
-                        <h6 (click)="cambiarOpcion('asesores')">
-                            <mat-icon class="icon-aling" mat-icon>person</mat-icon> Asesores
-                        </h6>
-                    </mat-list-item>
-
-                    <mat-list-item>
-                        <h6 (click)="cambiarOpcion('miembroComite')">
-                            <mat-icon class="icon-aling" mat-icon>people</mat-icon> Miembros del Comité
-                        </h6>
-                    </mat-list-item>
-
-                    <mat-list-item>
-                        <h6 (click)="cambiarOpcion('listarProyecto')">
-                            <mat-icon class="icon-aling" mat-icon>bar_chart</mat-icon> AnteProyectos Registrados
-                        </h6>
-                    </mat-list-item>
-
-                    <mat-list-item>
-                        <h6 (click)="openDialog()">
-                            <mat-icon class="icon-aling" mat-icon>book</mat-icon> Registar AnteProyecto
-                        </h6>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <h6>
-                            <mat-icon class="icon-aling" mat-icon>check_box</mat-icon> Valorar AnteProyecto
-                        </h6>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <h6 (click)="cambiarOpcion('listarProyectoAsignar')">
-                            <mat-icon class="icon-aling" mat-icon>how_to_reg</mat-icon> Asignar Asesor
+                        <h6 (click)="cerrarSesion()">
+                            <mat-icon class="icon-aling" mat-icon>close</mat-icon> Cerrar Sesión
                         </h6>
                     </mat-list-item>
                 </mat-accordion>
@@ -58,11 +31,11 @@
         <mat-icon *ngIf="!drawer.opened" (click)="drawer.toggle()">
             menu
         </mat-icon>
-        <div class="HeaderStyle">Universidad popular del cesar</div>
+        <div class="HeaderStyle">Universidad Popular del Cesar</div>
         <span class="example-spacer"></span>
         <button mat-icon-button>
             <mat-icon class="icon-header">person</mat-icon>
-            <span class="HeaderStyle">Usuario</span>
+            <span class="HeaderStyle">{{session.name}}</span>
         </button>
     </mat-toolbar>
 

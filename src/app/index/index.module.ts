@@ -27,6 +27,10 @@ import { ServiceAsesoriasService } from 'src/services/asesorias.service';
 import { ListarProyectosAsignadosComponent } from './asesores/listar-proyectos-asignados/listar-proyectos-asignados.component';
 import { ListarAsesoresComponent } from './asesores/listar-asesores/listar-asesores.component';
 import { ProyectosAsignadosComponent } from './listar-proyecto/proyectos-asignados/proyectos-asignados.component';
+import { LoginService } from 'src/services/login.service';
+import { MenuAsesorComponent } from './menu/menu-asesor/menu-asesor.component';
+import { MenuEstudianteComponent } from './menu/menu-estudiante/menu-estudiante.component';
+import { MenuMiembroComiteComponent } from './menu/menu-miembro-comite/menu-miembro-comite.component';
 
 @NgModule({
     declarations: [
@@ -47,7 +51,10 @@ import { ProyectosAsignadosComponent } from './listar-proyecto/proyectos-asignad
         CofirmarAsesoriasComponent,
         RegistrarProyectoComponent,
         ListarProyectosAsignadosComponent,
-        ListarAsesoresComponent
+        ListarAsesoresComponent,
+        MenuAsesorComponent,
+        MenuEstudianteComponent,
+        MenuMiembroComiteComponent
     ],
     imports: [
         indexRoutesModule,
@@ -57,7 +64,7 @@ import { ProyectosAsignadosComponent } from './listar-proyecto/proyectos-asignad
         ReactiveFormsModule,
         HttpClientModule
     ],
-    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService, ServiceAnteproyectoService, ServiceAsesoriasService],
+    providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService, ServiceAnteproyectoService, ServiceAsesoriasService, LoginService],
     bootstrap: [IndexComponent]
 })
 export class IndexModule { }

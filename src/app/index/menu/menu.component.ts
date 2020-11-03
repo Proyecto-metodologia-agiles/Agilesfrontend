@@ -1,7 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { menuOptions } from 'src/types/types'
 import { MatDialog } from '@angular/material/dialog';
-import { RegistrarProyectoComponent } from '../shared/registrar-proyecto/registrar-proyecto.component';
+import { sesion } from 'src/models/login';
+import { LoginService } from 'src/services/login.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,26 +14,27 @@ import { RegistrarProyectoComponent } from '../shared/registrar-proyecto/registr
 
 export class MenuComponent implements OnInit {
 	showFiller = false;
-
+	session: sesion;
 	@Output() opcion = new EventEmitter<menuOptions>();
 	seleccionado: menuOptions = 'inicio';
-	constructor(private dialog: MatDialog) {
+	constructor(private dialog: MatDialog, private LoginService: LoginService, private PageRoutes: Router) {
 	}
 
-	ngOnInit() { }
+
+	ngOnInit() {
+		this.session = this.LoginService.getToken();
+
+	}
+
 
 	cambiarOpcion(options: menuOptions) {
 		this.seleccionado = options;
 		this.opcion.emit(options);
 	}
 
-	openDialog() {
-		const dialogRef = this.dialog.open(RegistrarProyectoComponent, {
-			width: '300%',
-		});
-		dialogRef.afterClosed().subscribe(result => {
-			console.log(`Dialog result: ${result}`);
-		});
+	cerrarSesion() {
+		this.LoginService.cerrarSesion();
+		this.PageRoutes.navigateByUrl('/login');
 	}
 
 }
