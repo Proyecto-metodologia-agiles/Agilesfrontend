@@ -11,4 +11,9 @@ export class EvaluarAteproyectoComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() { }
+
+
+	onSubmit() {
+
+	}
 }
