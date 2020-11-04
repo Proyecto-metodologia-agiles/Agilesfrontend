@@ -31,6 +31,7 @@ import { LoginService } from 'src/services/login.service';
 import { MenuAsesorComponent } from './menu/menu-asesor/menu-asesor.component';
 import { MenuEstudianteComponent } from './menu/menu-estudiante/menu-estudiante.component';
 import { MenuMiembroComiteComponent } from './menu/menu-miembro-comite/menu-miembro-comite.component';
+import { EvaluarProyectoComponent } from './miembros-comite/evaluar-proyecto/evaluar-proyecto.component';
 
 @NgModule({
     declarations: [
@@ -54,7 +55,8 @@ import { MenuMiembroComiteComponent } from './menu/menu-miembro-comite/menu-miem
         ListarAsesoresComponent,
         MenuAsesorComponent,
         MenuEstudianteComponent,
-        MenuMiembroComiteComponent
+        MenuMiembroComiteComponent,
+        EvaluarProyectoComponent
     ],
     imports: [
         indexRoutesModule,
