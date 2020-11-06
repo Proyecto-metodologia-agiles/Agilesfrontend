@@ -34,6 +34,7 @@ import { MenuMiembroComiteComponent } from './menu/menu-miembro-comite/menu-miem
 import { EvaluarProyectoComponent } from './miembros-comite/evaluar-proyecto/evaluar-proyecto.component';
 import { EvaluarAteproyectoComponent } from './shared/evaluar-ateproyecto/evaluar-ateproyecto.component';
 import { ValoracionAnteproyectoComponent } from './shared/valoracion-anteproyecto/valoracion-anteproyecto.component';
+import { ValorarAnteproyectoComponent } from './shared/valorar-anteproyecto/valorar-anteproyecto.component';
 
 @NgModule({
     declarations: [
@@ -60,7 +61,8 @@ import { ValoracionAnteproyectoComponent } from './shared/valoracion-anteproyect
         MenuMiembroComiteComponent,
         EvaluarProyectoComponent,
         EvaluarAteproyectoComponent,
-        ValoracionAnteproyectoComponent
+        ValoracionAnteproyectoComponent,
+        ValorarAnteproyectoComponent
     ],
     imports: [
         indexRoutesModule,
