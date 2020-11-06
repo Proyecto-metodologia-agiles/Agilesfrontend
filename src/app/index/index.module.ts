@@ -33,7 +33,6 @@ import { MenuEstudianteComponent } from './menu/menu-estudiante/menu-estudiante.
 import { MenuMiembroComiteComponent } from './menu/menu-miembro-comite/menu-miembro-comite.component';
 import { EvaluarProyectoComponent } from './miembros-comite/evaluar-proyecto/evaluar-proyecto.component';
 import { EvaluarAteproyectoComponent } from './shared/evaluar-ateproyecto/evaluar-ateproyecto.component';
-import { ValoracionAnteproyectoComponent } from './shared/valoracion-anteproyecto/valoracion-anteproyecto.component';
 import { ValorarAnteproyectoComponent } from './shared/valorar-anteproyecto/valorar-anteproyecto.component';
 
 @NgModule({
@@ -61,7 +60,7 @@ import { ValorarAnteproyectoComponent } from './shared/valorar-anteproyecto/valo
         MenuMiembroComiteComponent,
         EvaluarProyectoComponent,
         EvaluarAteproyectoComponent,
-        ValoracionAnteproyectoComponent,
+        ValorarAnteproyectoComponent,
         ValorarAnteproyectoComponent
     ],
     imports: [

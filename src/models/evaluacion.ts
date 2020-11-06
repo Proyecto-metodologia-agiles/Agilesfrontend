@@ -3,12 +3,22 @@ export class evaluacion {
     id: number;
     valoracion: string;
     observacion: string;
- 
+
 
     constructor() {
         this.TituloProyecto = '';
-        this.id=0;
-        this.valoracion= '';
+        this.id = 0;
+        this.valoracion = '';
+        this.observacion = '';
+    }
+}
+
+export class ValoracionProyecto {
+    id: number;
+    observacion: string;
+
+    constructor() {
+        this.id = 0;
         this.observacion = '';
     }
 }
