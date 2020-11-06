@@ -1,11 +1,20 @@
-<h2 mat-dialog-title>Realizar Evaluación </h2>
+<h2 mat-dialog-title>Realizar Valoración </h2>
 <mat-dialog-content class="mat-typography">
     <p class="title-body font-weight-light text-wrap">Complete los siguientes datos</p>
     <form (ngSubmit)="form.form.valid && onSubmit()" #form="ngForm">
         <div class="row">
             <div class="col-12">
                 <mat-form-field appearance="outline" class="mat-form-field w-100">
-                    <mat-label>Observación</mat-label>
+                    <mat-label>Valoración</mat-label>
+                    <input type="text" matInput placeholder="Digitar Valoracion" name="ValoracionProyecto" required>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <mat-form-field appearance="outline" class="mat-form-field w-100">
+                    <mat-label>Observación del comité</mat-label>
                     <textarea matInput type="text" placeholder="Diguitar la observacion..." name="ObservacionProyecto"
                         required></textarea>
                 </mat-form-field>
