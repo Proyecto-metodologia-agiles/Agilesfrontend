@@ -6,11 +6,11 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'index-evaluar-proyecto',
-  templateUrl: './evaluar-proyecto.component.html',
-  styleUrls: ['./evaluar-proyecto.component.css']
+  selector: 'valorar-anteproyecto',
+  templateUrl: './valorar-anteproyecto.component.html',
+  styleUrls: ['./valorar-anteproyecto.component.css']
 })
-export class EvaluarProyectoComponent implements OnInit {
+export class ValorarAnteproyectoComponent implements OnInit {
 
   constructor(private dialog: MatDialog) { }
 
@@ -25,4 +25,5 @@ export class EvaluarProyectoComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ValoracionProyecto } from 'src/models/evaluacion';
 
 @Component({
-  selector: 'valorar-anteproyecto',
+  selector: 'sharedvalorar-anteproyecto',
   templateUrl: './valorar-anteproyecto.component.html',
   styleUrls: ['./valorar-anteproyecto.component.css']
 })
