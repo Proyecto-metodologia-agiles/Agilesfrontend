@@ -24,6 +24,8 @@ export class ValorarAnteproyectoComponent implements OnInit {
     await Promise.all([
       (await this.proyectoservice.getAnteproyecto()).subscribe(
         Response => {
+          console.log(Response);
+
           this.dataSource = new MatTableDataSource(Response);
           this.dataSource.paginator = this.paginator;
         }
@@ -33,7 +35,8 @@ export class ValorarAnteproyectoComponent implements OnInit {
 
   openDialog(idAnteproyecto: string) {
     const dialogRef = this.dialog.open(ValorarAnteproyectoModalComponent, {
-      width: '300%'
+      width: '300%',
+      data: idAnteproyecto
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

@@ -54,7 +54,7 @@
                         <ng-container matColumnDef="valorar">
                             <th mat-header-cell *matHeaderCellDef> Valorar anteproyecto</th>
                             <td mat-cell *matCellDef="let item" style="text-align: center;">
-                                <button mat-icon-button color="primary" (click)="openDialog(item)">
+                                <button mat-icon-button color="primary" (click)="openDialog(item.id)">
                                     <mat-icon>check_box</mat-icon>
                                 </button>
                             </td>

@@ -2,7 +2,6 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 import { ServiceAsesorService } from 'src/services/asesor.service';
 import { ServiceAsesoriasService } from 'src/services/asesorias.service';
 import { asesores } from 'src/models/asesores';
@@ -18,32 +17,30 @@ import { asesorias } from 'src/models/asesorias';
 
 export class CofirmarAsesoriasComponent implements OnInit {
 	Cortes = ['Corte 1', 'Corte 2'];
-	public AsesorMetodologico:asesores[]= [];
-	public AsesorTematico:asesores[]= [];
+	public AsesorMetodologico: asesores[] = [];
+	public AsesorTematico: asesores[] = [];
 	asesorias = new asesorias();
 
 	myControl = new FormControl();
 	myContro2 = new FormControl();
 	filteredOptions: Observable<asesores[]>;
-	constructor(@Inject(MAT_DIALOG_DATA) public data: any,  private asesorService:ServiceAsesorService,private asesoriasServe:ServiceAsesoriasService) {
+	constructor(@Inject(MAT_DIALOG_DATA) public data: any, private asesorService: ServiceAsesorService, private asesoriasServe: ServiceAsesoriasService) {
 	}
 	async ngOnInit() {
 		(await this.asesorService.getAsesoresMetodologicos()).subscribe(Response => {
 			this.AsesorMetodologico = Response;
-		  });
-		  (await this.asesorService.getAsesoresTematicos()).subscribe(Response => {
+		});
+		(await this.asesorService.getAsesoresTematicos()).subscribe(Response => {
 			this.AsesorTematico = Response;
-		  });
-		
-		  console.log(this.data);
+		});
 	}
 
 	async onSubmit() {
 
 		this.asesorias.TituloProyecto = this.data.title;
-	
+
 		this.asesoriasServe.addAsesorias(this.asesorias);
-       
+
 	}
 
 	displayFn(user: asesores): string {

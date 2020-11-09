@@ -23,3 +23,15 @@ export class MiembroComite {
   }
 
 }
+
+export class ValoracionProyecto {
+  ProjectId: number;
+  Valoration: string;
+  Observation: string;
+
+  constructor() {
+    this.ProjectId = 0;
+    this.Valoration = '';
+    this.Observation = '';
+  }
+}
