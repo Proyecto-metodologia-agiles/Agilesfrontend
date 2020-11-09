@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { EvaluarAteproyectoComponent } from '../../shared/evaluar-ateproyecto/evaluar-ateproyecto.component';
-import { MatDialog } from '@angular/material/dialog';
-import { ServiceAsesorService } from 'src/services/asesor.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { ServiceAnteproyectoService } from '../../../../services/anteproyecto.service'
+
 
 @Component({
   selector: 'valorar-anteproyecto',
@@ -11,19 +11,33 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./valorar-anteproyecto.component.css']
 })
 export class ValorarAnteproyectoComponent implements OnInit {
+  displayedColumns: string[] = ['No', 'titulo', 'estudiante_1', 'estudiante_2', 'asesorMetodologico', 'asesorTematico', 'fechaInscripcion', 'estado'];
+  dataSource = new MatTableDataSource();
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private proyectoservice: ServiceAnteproyectoService) {
 
-  ngOnInit(): void {
+  }
+
+  async ngOnInit() {
+    await Promise.all([
+      (await this.proyectoservice.getAnteproyecto()).subscribe(
+        Response => {
+          console.log(Response);
+          this.dataSource = new MatTableDataSource(Response);
+          this.dataSource.paginator = this.paginator;
+        }
+      )
+    ]);
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(EvaluarAteproyectoComponent, {
-      width: '300%'
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    // const dialogRef = this.dialog.open(EvaluarAteproyectoComponent, {
+    //   width: '300%'
+    // });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
 
 }

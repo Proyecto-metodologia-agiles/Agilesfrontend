@@ -10,12 +10,12 @@ import { ServiceAnteproyectoService } from '../../../services/anteproyecto.servi
   styleUrls: ['./listar-proyecto.component.css']
 })
 export class ListarProyectoComponent implements OnInit {
-  displayedColumns: string[] = ['No', 'titulo','estudiante_1', 'estudiante_2', 'asesorMetodologico', 'asesorTematico', 'fechaInscripcion', 'estado'];
-	dataSource = new MatTableDataSource();
+  displayedColumns: string[] = ['No', 'titulo', 'estudiante_1', 'estudiante_2', 'asesorMetodologico', 'asesorTematico', 'fechaInscripcion', 'estado'];
+  dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   constructor(private dialog: MatDialog, private proyectoservice: ServiceAnteproyectoService) {
-      
+
   }
 
   async ngOnInit() {
@@ -28,7 +28,6 @@ export class ListarProyectoComponent implements OnInit {
         }
       )
     ]);
-
   }
 
 }

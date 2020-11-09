@@ -10,33 +10,52 @@
         <div class="row">
             <div class="col-12">
                 <div class="mat-elevation-z2">
-                    <!-- <table mat-table [dataSource]="dataSource" class="w-100" MatSort>
+                    <table mat-table [dataSource]="dataSource" class="w-100" MatSort>
                         <ng-container matColumnDef="No">
                             <th mat-header-cell *matHeaderCellDef> No. </th>
                             <td mat-cell *matCellDef="let item; let i = index;"> {{(i+1)}} </td>
                         </ng-container>
 
-                        <ng-container matColumnDef="title">
-                            <th mat-header-cell *matHeaderCellDef> Titulo del proyecto</th>
+                        <ng-container matColumnDef="titulo">
+                            <th mat-header-cell *matHeaderCellDef> Titulo</th>
                             <td mat-cell *matCellDef="let item"> {{item.title}} </td>
                         </ng-container>
 
-                        <ng-container matColumnDef="line">
-                            <th mat-header-cell *matHeaderCellDef>Linea de investigación</th>
-                            <td mat-cell *matCellDef="let item"> {{item.line}}</td>
+                        <ng-container matColumnDef="estudiante_1">
+                            <th mat-header-cell *matHeaderCellDef> Estudiante 1 </th>
+                            <td mat-cell *matCellDef="let item"> {{item.student_1.nombreCompleto}} </td>
                         </ng-container>
 
-                        <ng-container matColumnDef="focus">
-                            <th mat-header-cell *matHeaderCellDef>Enfoque</th>
-                            <td mat-cell *matCellDef="let item"> {{item.focus}} </td>
+                        <ng-container matColumnDef="estudiante_2">
+                            <th mat-header-cell *matHeaderCellDef> Estudiante 2</th>
+                            <td mat-cell *matCellDef="let item"> {{item.student_2.nombreCompleto}} </td>
                         </ng-container>
 
+                        <ng-container matColumnDef="asesorMetodologico">
+                            <th mat-header-cell *matHeaderCellDef> Asesor Metodológico (Sugerido por el estudiante)
+                            </th>
+                            <td mat-cell *matCellDef="let item"> {{item.metodologic_Advisor.name_Complet}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="asesorTematico">
+                            <th mat-header-cell *matHeaderCellDef> Asesor Temático (Sugerido por el estudiante) </th>
+                            <td mat-cell *matCellDef="let item"> {{item.thematic_Advisor.name_Complet}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="fechaInscripcion">
+                            <th mat-header-cell *matHeaderCellDef> Fecha Inscripción</th>
+                            <td mat-cell *matCellDef="let item"> {{item.date | date:"longDate" }} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="estado">
+                            <th mat-header-cell *matHeaderCellDef> Estado</th>
+                            <td mat-cell *matCellDef="let item"> {{item.estado}} </td>
+                        </ng-container>
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
                     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-                </div> -->
                 </div>
             </div>
         </div>
     </div>
+</div>
