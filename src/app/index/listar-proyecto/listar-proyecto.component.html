@@ -32,7 +32,8 @@
                         </ng-container>
 
                         <ng-container matColumnDef="asesorMetodologico">
-                            <th mat-header-cell *matHeaderCellDef> Asesor Metodológico (Sugerido por el estudiante) </th>
+                            <th mat-header-cell *matHeaderCellDef> Asesor Metodológico (Sugerido por el estudiante)
+                            </th>
                             <td mat-cell *matCellDef="let item"> {{item.metodologic_Advisor.name_Complet}} </td>
                         </ng-container>
                         <ng-container matColumnDef="asesorTematico">
@@ -42,9 +43,9 @@
 
                         <ng-container matColumnDef="fechaInscripcion">
                             <th mat-header-cell *matHeaderCellDef> Fecha Inscripción</th>
-                            <td mat-cell *matCellDef="let item"> {{item.date}} </td>
+                            <td mat-cell *matCellDef="let item"> {{item.date | date:"longDate"}} </td>
                         </ng-container>
-                        
+
                         <ng-container matColumnDef="estado">
                             <th mat-header-cell *matHeaderCellDef> Estado</th>
                             <td mat-cell *matCellDef="let item"> {{item.estado}} </td>

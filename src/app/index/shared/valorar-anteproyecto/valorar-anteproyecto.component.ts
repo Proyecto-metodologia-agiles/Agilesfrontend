@@ -6,7 +6,7 @@ import { ValoracionProyecto } from 'src/models/evaluacion';
   templateUrl: './valorar-anteproyecto.component.html',
   styleUrls: ['./valorar-anteproyecto.component.css']
 })
-export class ValorarAnteproyectoComponent implements OnInit {
+export class ValorarAnteproyectoModalComponent implements OnInit {
   ValoracionProyecto = new ValoracionProyecto();
   constructor() { }
 
