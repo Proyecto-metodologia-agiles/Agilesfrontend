@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IndexComponent } from './index.component';
 import { MenuComponent } from './menu/menu.component';
 import { AngularMaterialModule } from '../angularmaterial.module';
-import { InicioComponent } from './inicio/inicio.component';
+// import { InicioComponent } from './inicio/inicio.component';
 import { EstudianteComponent } from './estudiantes/estudiantes.component';
 import { ListarEstudiantesComponent } from './estudiantes/listar-estudiantes/listar-estudiantes.component';
 import { AsesoresComponent } from './asesores/asesores.component';
@@ -31,7 +31,6 @@ import { SharedModule } from './shared/shared-module.module';
 @NgModule({
     declarations: [
         IndexComponent,
-        InicioComponent,
         MenuComponent,
         EstudianteComponent,
         ListarEstudiantesComponent,
