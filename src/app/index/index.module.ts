@@ -26,8 +26,8 @@ import { LoginService } from 'src/services/login.service';
 import { MenuAsesorComponent } from './menu/menu-asesor/menu-asesor.component';
 import { MenuEstudianteComponent } from './menu/menu-estudiante/menu-estudiante.component';
 import { MenuMiembroComiteComponent } from './menu/menu-miembro-comite/menu-miembro-comite.component';
-import { EvaluarProyectoComponent } from './miembros-comite/evaluar-proyecto/evaluar-proyecto.component';
 import { SharedModule } from './shared/shared-module.module';
+import { ValorarAnteproyectoComponent } from './miembros-comite/valorar-anteproyecto/valorar-anteproyecto.component';
 @NgModule({
     declarations: [
         IndexComponent,
@@ -45,7 +45,7 @@ import { SharedModule } from './shared/shared-module.module';
         MenuAsesorComponent,
         MenuEstudianteComponent,
         MenuMiembroComiteComponent,
-        EvaluarProyectoComponent,
+        ValorarAnteproyectoComponent,
     ],
     imports: [
         indexRoutesModule,

@@ -9,7 +9,7 @@ import { RegistrarAsesorComponent } from "./registrar-asesor/registrar-asesor.co
 import { RegistrarComiteComponent } from "./registrar-comite/registrar-comite.component";
 import { RegistrarEstudianteComponent } from "./registrar-estudiante/registrar-estudiante.component";
 import { RegistrarProyectoComponent } from "./registrar-proyecto/registrar-proyecto.component";
-import { ValorarAnteproyectoComponent } from "./valorar-anteproyecto/valorar-anteproyecto.component";
+import { ValorarAnteproyectoModalComponent } from "./valorar-anteproyecto/valorar-anteproyecto.component";
 
 @NgModule({
     imports: [
@@ -25,7 +25,7 @@ import { ValorarAnteproyectoComponent } from "./valorar-anteproyecto/valorar-ant
         RegistrarComiteComponent,
         RegistrarEstudianteComponent,
         RegistrarProyectoComponent,
-        ValorarAnteproyectoComponent
+        ValorarAnteproyectoModalComponent
     ],
     exports: [
         CofirmarAsesoriasComponent,
@@ -34,7 +34,7 @@ import { ValorarAnteproyectoComponent } from "./valorar-anteproyecto/valorar-ant
         RegistrarComiteComponent,
         RegistrarEstudianteComponent,
         RegistrarProyectoComponent,
-        ValorarAnteproyectoComponent]
+        ValorarAnteproyectoModalComponent]
 })
 export class SharedModule { }
 

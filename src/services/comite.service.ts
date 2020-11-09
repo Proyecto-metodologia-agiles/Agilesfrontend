@@ -1,11 +1,13 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MiembroComite } from 'src/models/miembroComite';
+import { MiembroComite, ValoracionProyecto } from 'src/models/miembroComite';
 import Swal from 'sweetalert2';
 import { HOST_DATABASE } from 'src/database/host.database';
 
 const URL_MIEMBRO_POST = HOST_DATABASE + 'CommitteeMember/Post'
 const URL_MIEMBRO_GET = HOST_DATABASE + 'CommitteeMember/MiembrosComite'
+const URL_VALORAR_PROYECTO = HOST_DATABASE + 'Project/CreateValoracion'
+
 @Injectable({ providedIn: 'root' })
 export class MiembroComiteService {
     public Profesores = [
@@ -48,5 +50,26 @@ export class MiembroComiteService {
             });
         });
     }
+
+    valorarProyecto(valorarProyecto: ValoracionProyecto) {
+        this.httpClient.post(URL_VALORAR_PROYECTO, valorarProyecto).subscribe(Response => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'El Miembro del Comité ha sido guardado con éxito',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }, error => {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Problemas al intentar guardar el miembro del comité',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+    }
+
 
 }
