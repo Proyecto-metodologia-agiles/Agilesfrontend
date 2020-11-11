@@ -13,8 +13,10 @@ const URLASESORTEMATICO_GET = HOST_DATABASE + 'Asesor/AsesoresTematicos';
 const URLASESOR_GUARDAR = HOST_DATABASE + 'Asesor/Post';
 const URL_EVALUAR_PROYECTO = HOST_DATABASE + 'Project/CreateEvaluation';
 
+
 @Injectable({ providedIn: 'root' })
 export class ServiceAsesorService {
+    public error = false;
     constructor(private httpClient: HttpClient) { }
 
     async getAsesores() {
@@ -38,6 +40,7 @@ export class ServiceAsesorService {
                 showConfirmButton: false,
                 timer: 1500
             });
+            this.error=false;
         }, error => {
             Swal.fire({
                 position: 'center',
@@ -46,6 +49,7 @@ export class ServiceAsesorService {
                 showConfirmButton: false,
                 timer: 1500
             });
+            this.error=true;
         });
     }
 
@@ -58,6 +62,7 @@ export class ServiceAsesorService {
                 showConfirmButton: false,
                 timer: 1500
             });
+            this.error=false;
         }, error => {
             Swal.fire({
                 position: 'center',
@@ -66,6 +71,7 @@ export class ServiceAsesorService {
                 showConfirmButton: false,
                 timer: 1500
             });
+            this.error=true;
         });
     }
 }

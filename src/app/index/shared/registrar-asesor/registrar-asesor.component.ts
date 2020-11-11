@@ -9,7 +9,8 @@ import { ServiceAsesorService } from 'src/services/asesor.service';
 })
 
 export class RegistrarAsesorComponent implements OnInit {
-	TipoAsesor = ['Metodologico', 'Tematico']
+	TipoAsesor = ['Metodológico', 'Temático']
+	public error = false;
 
 	Asesor = new asesores();
 
