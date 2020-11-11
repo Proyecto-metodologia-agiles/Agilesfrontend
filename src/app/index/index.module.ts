@@ -28,6 +28,7 @@ import { MenuEstudianteComponent } from './menu/menu-estudiante/menu-estudiante.
 import { MenuMiembroComiteComponent } from './menu/menu-miembro-comite/menu-miembro-comite.component';
 import { SharedModule } from './shared/shared-module.module';
 import { ValorarAnteproyectoComponent } from './miembros-comite/valorar-anteproyecto/valorar-anteproyecto.component';
+import { EvaluarAnteproyectoComponent } from './asesores/evaluar-anteproyecto/evaluar-anteproyecto.component';
 @NgModule({
     declarations: [
         IndexComponent,
@@ -46,6 +47,7 @@ import { ValorarAnteproyectoComponent } from './miembros-comite/valorar-anteproy
         MenuEstudianteComponent,
         MenuMiembroComiteComponent,
         ValorarAnteproyectoComponent,
+        EvaluarAnteproyectoComponent,
     ],
     imports: [
         indexRoutesModule,
