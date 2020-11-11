@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { asesores } from 'src/models/asesores';
+import { evaluacion } from 'src/models/evaluacion';
 import Swal from 'sweetalert2';
 import { HOST_DATABASE } from 'src/database/host.database';
+import { EvaluarAteproyectoComponent } from 'src/app/index/shared/evaluar-ateproyecto/evaluar-ateproyecto.component';
 
 
 const URLASESOR_GET = HOST_DATABASE + 'Asesor/Asesores';
 const URLASESORMETODOLOGICO_GET = HOST_DATABASE + 'Asesor/AsesoresMetodologicos';
 const URLASESORTEMATICO_GET = HOST_DATABASE + 'Asesor/AsesoresTematicos';
 const URLASESOR_GUARDAR = HOST_DATABASE + 'Asesor/Post';
+const URL_EVALUAR_PROYECTO = HOST_DATABASE + 'Project/CreateEvaluation';
+
 @Injectable({ providedIn: 'root' })
 export class ServiceAsesorService {
     constructor(private httpClient: HttpClient) { }
@@ -39,6 +43,26 @@ export class ServiceAsesorService {
                 position: 'center',
                 icon: 'error',
                 title: 'Problemas al intentar guardar el nuevo asesor',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+    }
+
+    evaluarProyecto(evaluarProyecto: evaluacion) {
+        this.httpClient.post(URL_EVALUAR_PROYECTO, evaluarProyecto).subscribe(Response => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'La evaluacion se guardó de forma exitosa',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }, error => {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Problemas al intentar guardar la evaluación',
                 showConfirmButton: false,
                 timer: 1500
             });
