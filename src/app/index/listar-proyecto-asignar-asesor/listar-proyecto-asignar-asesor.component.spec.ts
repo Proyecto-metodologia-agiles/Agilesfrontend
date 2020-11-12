@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ProyectoAsignarAsesorComponent } from './listar-proyecto-asignar-asesor.component';
 
@@ -8,6 +10,7 @@ describe('a listar-proyecto-asignar-asesor component', () => {
 	// register all needed dependencies
 	beforeEach(() => {
 		TestBed.configureTestingModule({
+			imports: [MatDialogModule, HttpClientTestingModule],
 			providers: [
 				ProyectoAsignarAsesorComponent]
 		});

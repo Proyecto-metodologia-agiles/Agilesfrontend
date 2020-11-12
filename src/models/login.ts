@@ -8,7 +8,7 @@ export class Login {
   }
 }
 
-export interface sesion {
+export class sesion {
   email: string;
   fail: boolean;
   id: string;
@@ -17,4 +17,5 @@ export interface sesion {
   name: string;
   telephone: string;
   type: string;
+
 }
