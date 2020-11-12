@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { evaluacion } from 'src/models/evaluacion';
+import { ServiceAsesorService } from 'src/services/asesor.service';
+
 
 @Component({
 	selector: 'evaluar-ateproyecto',
@@ -7,13 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class EvaluarAteproyectoComponent implements OnInit {
-
-	constructor() { }
+	evaluacionAnteproyecto = new evaluacion;
+	constructor(@Inject(MAT_DIALOG_DATA) public data: any, private ServiceAsesor: ServiceAsesorService) { }
 
 	ngOnInit() { }
 
 
 	onSubmit() {
-
+		this.evaluacionAnteproyecto.ProjectId = this.data;
+    	this.ServiceAsesor.evaluarProyecto(this.evaluacionAnteproyecto);
 	}
 }
