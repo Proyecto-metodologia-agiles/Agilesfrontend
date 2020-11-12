@@ -56,7 +56,7 @@ export class MiembroComiteService {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'El Miembro del Comité ha sido guardado con éxito',
+                title: 'La valoración ha sido guardada con éxito',
                 showConfirmButton: false,
                 timer: 1500
             });
@@ -64,7 +64,7 @@ export class MiembroComiteService {
             Swal.fire({
                 position: 'center',
                 icon: 'error',
-                title: 'Problemas al intentar guardar el miembro del comité',
+                title: 'Problemas al intentar guardar la valoración',
                 showConfirmButton: false,
                 timer: 1500
             });

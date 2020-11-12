@@ -58,7 +58,7 @@ export class ServiceAsesorService {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'La evaluacion se guardó de forma exitosa',
+                title: 'La evaluación se guardó de forma exitosa',
                 showConfirmButton: false,
                 timer: 1500
             });
