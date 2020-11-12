@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ListarAsesoresComponent } from './listar-asesores.component';
 
@@ -8,9 +10,10 @@ describe('ListarAsesoresComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListarAsesoresComponent ]
+      imports: [MatDialogModule, HttpClientTestingModule],
+      declarations: [ListarAsesoresComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

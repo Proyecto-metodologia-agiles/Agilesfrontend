@@ -47,8 +47,8 @@ export class CofirmarAsesoriasComponent implements OnInit {
 		return user && user.Name_Complet ? user.Name_Complet : '';
 	}
 
-	private _filter(name: string): asesores[] {
-		const filterValue = name.toLowerCase();
-		return this.AsesorMetodologico.filter(option => option.Name_Complet.toLowerCase().indexOf(filterValue) === 0);
-	}
+	// private _filter(name: string): asesores[] {
+	// 	const filterValue = name.toLowerCase();
+	// 	return this.AsesorMetodologico.filter(option => option.Name_Complet.toLowerCase().indexOf(filterValue) === 0);
+	// }
 }

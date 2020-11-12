@@ -16,7 +16,7 @@ export class ProyectosAsignadosComponent implements OnInit {
 	dataSource = new MatTableDataSource();
 	@ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
-	constructor(private dialog: MatDialog, private proyectoservice: ServiceAnteproyectoService) {
+	constructor() {
 
 	}
 

@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { MenuEstudianteComponent } from './menu-estudiante.component';
 
@@ -8,9 +9,12 @@ describe('MenuEstudianteComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuEstudianteComponent ]
+      imports: [
+        MatDialogModule],
+      declarations: [MenuEstudianteComponent]
+
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
