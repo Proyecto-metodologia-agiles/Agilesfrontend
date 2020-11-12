@@ -26,8 +26,6 @@ export class CofirmarAsesoriasComponent implements OnInit {
 	constructor(@Inject(MAT_DIALOG_DATA) public data: any, private asesorService: ServiceAsesorService, private asesoriasServe: ServiceAsesoriasService) {
 	}
 	async ngOnInit() {
-		console.log(this.data);
-
 		(await this.asesorService.getAsesoresMetodologicos()).subscribe(Response => {
 			this.AsesorMetodologico = Response;
 		});

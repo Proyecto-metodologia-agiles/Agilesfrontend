@@ -24,8 +24,13 @@ export class ListarProyectosAsignadosComponent implements OnInit {
     await Promise.all([
       (await this.AnteproyectoService.getAsesorAsignado(this.sesion.id)).subscribe(
         (Response: any) => {
-          this.dataSource = new MatTableDataSource(Response.projects);
-          this.dataSource.paginator = this.paginator;
+          if (Response.length > 0) {
+            this.dataSource = new MatTableDataSource(Response.projects);
+            this.dataSource.paginator = this.paginator;
+          } else {
+            console.log("error");
+          }
+
         }
       )
     ]);

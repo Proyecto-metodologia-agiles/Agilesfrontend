@@ -8,7 +8,7 @@ import { ServiceEstudianteService } from 'src/services/estudiante.service';
   styleUrls: ['./registrar-estudiante.component.css']
 })
 export class RegistrarEstudianteComponent implements OnInit {
-  Semestres = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  public Semestres = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
   estudiante = new Estudiante;
   constructor(private estudianteservice: ServiceEstudianteService) { }
