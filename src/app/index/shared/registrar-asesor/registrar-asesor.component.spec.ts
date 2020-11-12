@@ -1,4 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
 import { asesores } from 'src/models/asesores';
 import { ServiceAsesorService } from 'src/services/asesor.service';
@@ -13,6 +14,7 @@ describe('a registrar-asesor component', () => {
 	// register all needed dependencies
 	beforeEach(() => {
 		TestBed.configureTestingModule({
+			imports: [HttpClientTestingModule],
 			providers: [
 				RegistrarAsesorComponent
 			]
@@ -43,5 +45,5 @@ describe('a registrar-asesor component', () => {
 
 		const req = HttpMock
 	});*/
-	
+
 });

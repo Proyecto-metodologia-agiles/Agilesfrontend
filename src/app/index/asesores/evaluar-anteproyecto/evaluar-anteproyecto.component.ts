@@ -16,12 +16,10 @@ export class EvaluarAnteproyectoComponent implements OnInit {
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   constructor(private dialog: MatDialog, private proyectoservice: ServiceAnteproyectoService) { }
 
-  async ngOnInit(){
+  async ngOnInit() {
     await Promise.all([
       (await this.proyectoservice.getAnteproyecto()).subscribe(
         Response => {
-          console.log(Response);
-
           this.dataSource = new MatTableDataSource(Response);
           this.dataSource.paginator = this.paginator;
         }

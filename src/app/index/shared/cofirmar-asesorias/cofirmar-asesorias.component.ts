@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { ServiceAsesorService } from 'src/services/asesor.service';
 import { ServiceAsesoriasService } from 'src/services/asesorias.service';
 import { asesores } from 'src/models/asesores';
@@ -23,7 +22,7 @@ export class CofirmarAsesoriasComponent implements OnInit {
 
 	myControl = new FormControl();
 	myContro2 = new FormControl();
-	filteredOptions: Observable<asesores[]>;
+	//filteredOptions: Observable<asesores[]>;
 	constructor(@Inject(MAT_DIALOG_DATA) public data: any, private asesorService: ServiceAsesorService, private asesoriasServe: ServiceAsesoriasService) {
 	}
 	async ngOnInit() {
@@ -43,12 +42,12 @@ export class CofirmarAsesoriasComponent implements OnInit {
 
 	}
 
-	displayFn(user: asesores): string {
-		return user && user.Name_Complet ? user.Name_Complet : '';
-	}
+	// displayFn(user: asesores): string {
+	// 	return user && user.Name_Complet ? user.Name_Complet : '';
+	// }
 
-	private _filter(name: string): asesores[] {
-		const filterValue = name.toLowerCase();
-		return this.AsesorMetodologico.filter(option => option.Name_Complet.toLowerCase().indexOf(filterValue) === 0);
-	}
+	// private _filter(name: string): asesores[] {
+	// 	const filterValue = name.toLowerCase();
+	// 	return this.AsesorMetodologico.filter(option => option.Name_Complet.toLowerCase().indexOf(filterValue) === 0);
+	// }
 }

@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
 
 import { RegistrarComiteComponent } from './registrar-comite.component';
@@ -8,6 +9,7 @@ describe('a registrar-comite component', () => {
 	// register all needed dependencies
 	beforeEach(() => {
 		TestBed.configureTestingModule({
+			imports: [HttpClientTestingModule],
 			providers: [
 				RegistrarComiteComponent
 			]
