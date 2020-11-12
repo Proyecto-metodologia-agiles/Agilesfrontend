@@ -10,7 +10,7 @@ import { ServiceEstudianteService } from 'src/services/estudiante.service';
 export class RegistrarEstudianteComponent implements OnInit {
   public Semestres = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
-  estudiante = new Estudiante;
+  estudiante = new Estudiante();
   constructor(private estudianteservice: ServiceEstudianteService) { }
 
   ngOnInit(): void {
