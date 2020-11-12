@@ -11,7 +11,7 @@ import { ServiceAsesoriasService } from 'src/services/asesorias.service';
 
 import { CofirmarAsesoriasComponent } from './cofirmar-asesorias.component';
 
-describe('a cofirmar-asesorias component', () => {
+describe('a cofirmar-asesorias-component-error', () => {
 	let component: CofirmarAsesoriasComponent;
 	let fixture: ComponentFixture<CofirmarAsesoriasComponent>;
 	const mockDialogRef = {
@@ -35,7 +35,18 @@ describe('a cofirmar-asesorias component', () => {
 				}, {
 					provide: MAT_DIALOG_DATA,
 					useValue: {
-						id: '1'
+						cut: "1",
+						date: "2020-10-24T00:00:00",
+						focus: "Cualitativo",
+						id: "1",
+						line: "Psicología y las Organizaciones",
+						metodologic_Advisor: {},
+						state: "1",
+						student_1: {},
+						student_2: {},
+						thematic_Advisor: {},
+						title: "prueba proyecto",
+						url_Archive: "localhost:5001/Archivos/6373"
 					} // Add any data you wish to test if it is passed/used correctly
 				}
 			]

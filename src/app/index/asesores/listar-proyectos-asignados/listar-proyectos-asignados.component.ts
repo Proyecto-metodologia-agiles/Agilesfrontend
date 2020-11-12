@@ -16,7 +16,7 @@ export class ListarProyectosAsignadosComponent implements OnInit {
   displayedColumns: string[] = ['No', 'title', 'line', 'focus'];
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  sesion: sesion;
+  sesion = new sesion();
   constructor(private dialog: MatDialog, private AnteproyectoService: ServiceAnteproyectoService) { }
 
   async ngOnInit() {
