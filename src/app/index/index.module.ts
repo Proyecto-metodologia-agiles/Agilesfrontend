@@ -29,6 +29,7 @@ import { MenuMiembroComiteComponent } from './menu/menu-miembro-comite/menu-miem
 import { SharedModule } from './shared/shared-module.module';
 import { ValorarAnteproyectoComponent } from './miembros-comite/valorar-anteproyecto/valorar-anteproyecto.component';
 import { EvaluarAnteproyectoComponent } from './asesores/evaluar-anteproyecto/evaluar-anteproyecto.component';
+import { ProyectoEvaluadoComponent } from './estudiantes/proyecto-evaluado/proyecto-evaluado.component';
 @NgModule({
     declarations: [
         IndexComponent,
@@ -48,6 +49,7 @@ import { EvaluarAnteproyectoComponent } from './asesores/evaluar-anteproyecto/ev
         MenuMiembroComiteComponent,
         ValorarAnteproyectoComponent,
         EvaluarAnteproyectoComponent,
+        ProyectoEvaluadoComponent,
     ],
     imports: [
         indexRoutesModule,
