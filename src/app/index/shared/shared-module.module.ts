@@ -10,6 +10,7 @@ import { RegistrarComiteComponent } from "./registrar-comite/registrar-comite.co
 import { RegistrarEstudianteComponent } from "./registrar-estudiante/registrar-estudiante.component";
 import { RegistrarProyectoComponent } from "./registrar-proyecto/registrar-proyecto.component";
 import { ValorarAnteproyectoModalComponent } from "./valorar-anteproyecto/valorar-anteproyecto.component";
+import { RegistrarFechasComponent } from './registrar-fechas/registrar-fechas.component';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import { ValorarAnteproyectoModalComponent } from "./valorar-anteproyecto/valora
         RegistrarComiteComponent,
         RegistrarEstudianteComponent,
         RegistrarProyectoComponent,
-        ValorarAnteproyectoModalComponent
+        ValorarAnteproyectoModalComponent,
+        RegistrarFechasComponent
     ],
     exports: [
         CofirmarAsesoriasComponent,
