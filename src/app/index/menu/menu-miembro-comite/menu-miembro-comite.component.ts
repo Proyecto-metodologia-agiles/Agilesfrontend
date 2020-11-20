@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { menuOptions } from 'src/types/types';
+import { MatDialog } from '@angular/material/dialog';
+import { RegistrarFechasComponent } from '../../shared/registrar-fechas/registrar-fechas.component';
 
 @Component({
   selector: 'menu-miembro-comite',
@@ -8,7 +10,7 @@ import { menuOptions } from 'src/types/types';
 })
 export class MenuMiembroComiteComponent implements OnInit {
   @Output() opcion = new EventEmitter<menuOptions>();
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -16,5 +18,14 @@ export class MenuMiembroComiteComponent implements OnInit {
   cambiarOpcion(options: menuOptions) {
     this.opcion.emit(options);
   }
+
+  openDialog() {
+		const dialogRef = this.dialog.open(RegistrarFechasComponent, {
+			width: '300%',
+		});
+		dialogRef.afterClosed().subscribe(result => {
+			console.log(`Dialog result: ${result}`);
+		});
+	}
 
 }
