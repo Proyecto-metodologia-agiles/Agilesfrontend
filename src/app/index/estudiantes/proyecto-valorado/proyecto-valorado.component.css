@@ -1,0 +1,44 @@
+.body {
+    width: 100%;
+    position: relative;
+    z-index: -1000;
+}
+
+.title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container-header{
+    text-align: center;
+    width: 100%;
+}
+
+.title-body{
+    text-align: left;
+}
+
+#btn-color{
+    color: #ffffff;
+    background-color: #339240 !important;
+}
+
+.ubication{
+    margin-right: 13px;
+}
+
+
+#btn-color{
+    color: #ffffff;
+    background-color: #339240 !important;
+}
+
+.mat-dialog-actions{
+    padding: 8px 0;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 52px;
+    align-items: center;
+    align-content: center;
+     margin-bottom: 0px;
+}

@@ -2,7 +2,7 @@
     <div class="container-header">
         <div class="row">
             <div class="col-12">
-                <h1>Evaluación por parte del Asesor</h1>
+                <h1>Evaluación por parte del Comité Evaluador</h1>
             </div>
         </div>
     </div>
@@ -22,10 +22,10 @@
                         </ng-container>
 
                         <ng-container matColumnDef="evaluacion">
-                            <th mat-header-cell *matHeaderCellDef> Descripción de Evaluación</th>
+                            <th mat-header-cell *matHeaderCellDef> Descripción de la Valoración</th>
                             <td mat-cell *matCellDef="let item" style="text-align: center;">
                                 {{item.evaluacion}}
-                                <button mat-icon-button color="primary" (click)="verEvaluacion(item)">
+                                <button mat-icon-button color="primary" (click)="verValoracion(item)">
                                     <mat-icon>check_box</mat-icon>
                                 </button>
                             </td>
