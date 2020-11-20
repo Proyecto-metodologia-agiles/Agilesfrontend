@@ -30,6 +30,7 @@ import { SharedModule } from './shared/shared-module.module';
 import { ValorarAnteproyectoComponent } from './miembros-comite/valorar-anteproyecto/valorar-anteproyecto.component';
 import { EvaluarAnteproyectoComponent } from './asesores/evaluar-anteproyecto/evaluar-anteproyecto.component';
 import { ProyectoEvaluadoComponent } from './estudiantes/proyecto-evaluado/proyecto-evaluado.component';
+import { ProyectoValoradoComponent } from './estudiantes/proyecto-valorado/proyecto-valorado.component';
 @NgModule({
     declarations: [
         IndexComponent,
@@ -50,6 +51,7 @@ import { ProyectoEvaluadoComponent } from './estudiantes/proyecto-evaluado/proye
         ValorarAnteproyectoComponent,
         EvaluarAnteproyectoComponent,
         ProyectoEvaluadoComponent,
+        ProyectoValoradoComponent,
     ],
     imports: [
         indexRoutesModule,
