@@ -15,36 +15,34 @@ import bsCustomFileInput from 'bs-custom-file-input';
 })
 export class RegistrarProyectoComponent implements OnInit {
   Enfoque = ['Cuantitativo', 'Cualitativo'];
-  Lineas = ['Psicología Educativa','Psicología y las Organizaciones','Psicología en Contextos Sociales y Culturales','Psicología de la Familia','Psicología Clínica y de la Salud'];
-  public AsesorMetodologico:asesores[]= [];
-  public AsesorTematico:asesores[]= [];
-  public Estudiante:Estudiante[] = [];
+  Lineas = ['Psicología Educativa', 'Psicología y las Organizaciones', 'Psicología en Contextos Sociales y Culturales', 'Psicología de la Familia', 'Psicología Clínica y de la Salud'];
+  public AsesorMetodologico: asesores[] = [];
+  public AsesorTematico: asesores[] = [];
+  public Estudiante: Estudiante[] = [];
   anteproyecto = new Anteproyecto;
-  constructor(private anteproyectoservice: ServiceAnteproyectoService, public dialog: MatDialog, 
-    private asesorService:ServiceAsesorService, private estudianteService:ServiceEstudianteService) {
-    
+  constructor(private anteproyectoservice: ServiceAnteproyectoService, public dialog: MatDialog,
+    private asesorService: ServiceAsesorService, private estudianteService: ServiceEstudianteService) {
+
   }
 
-  async ngOnInit(){
+  async ngOnInit() {
     bsCustomFileInput.init();
     (await this.asesorService.getAsesoresMetodologicos()).subscribe(Response => {
       this.AsesorMetodologico = Response;
-
     });
     (await this.asesorService.getAsesoresTematicos()).subscribe(Response => {
       this.AsesorTematico = Response;
-
     });
     (await this.estudianteService.getEstudiantesSinProyecto()).subscribe(Response => {
       this.Estudiante = Response;
     });
   }
 
-  onFileChange(event){
-    this.anteproyecto.Archive = <File> event.target.files[0];
+  onFileChange(event) {
+    this.anteproyecto.Archive = <File>event.target.files[0];
 
   }
-  onSubmit(){
+  onSubmit() {
     this.anteproyectoservice.addAnteproyecto(this.anteproyecto);
   }
 }

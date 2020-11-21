@@ -33,6 +33,8 @@ export class ServiceAsesorService {
 
     addAsesor(asesor: asesores) {
         this.httpClient.post(URLASESOR_GUARDAR, asesor).subscribe(Response => {
+            console.log(Response);
+
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -40,7 +42,7 @@ export class ServiceAsesorService {
                 showConfirmButton: false,
                 timer: 1500
             });
-            this.error=false;
+            this.error = false;
         }, error => {
             Swal.fire({
                 position: 'center',
@@ -49,12 +51,15 @@ export class ServiceAsesorService {
                 showConfirmButton: false,
                 timer: 1500
             });
-            this.error=true;
+            this.error = true;
         });
     }
 
     evaluarProyecto(evaluarProyecto: evaluacion) {
+        console.log(evaluarProyecto);
         this.httpClient.post(URL_EVALUAR_PROYECTO, evaluarProyecto).subscribe(Response => {
+            console.log(Response);
+
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -62,7 +67,7 @@ export class ServiceAsesorService {
                 showConfirmButton: false,
                 timer: 1500
             });
-            this.error=false;
+            this.error = false;
         }, error => {
             Swal.fire({
                 position: 'center',
@@ -71,7 +76,7 @@ export class ServiceAsesorService {
                 showConfirmButton: false,
                 timer: 1500
             });
-            this.error=true;
+            this.error = true;
         });
     }
 }
