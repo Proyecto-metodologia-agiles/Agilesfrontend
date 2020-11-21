@@ -3,10 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { MiembroComite, ValoracionProyecto } from 'src/models/miembroComite';
 import Swal from 'sweetalert2';
 import { HOST_DATABASE } from 'src/database/host.database';
+import { fechas } from 'src/models/fechas';
 
 const URL_MIEMBRO_POST = HOST_DATABASE + 'CommitteeMember/Post'
 const URL_MIEMBRO_GET = HOST_DATABASE + 'CommitteeMember/MiembrosComite'
 const URL_VALORAR_PROYECTO = HOST_DATABASE + 'Project/CreateValoracion'
+const URL_FECHAS_ADD = HOST_DATABASE + 'Announcement/Post'
 
 @Injectable({ providedIn: 'root' })
 export class MiembroComiteService {
@@ -30,6 +32,25 @@ export class MiembroComiteService {
         return this.httpClient.get<MiembroComite[]>(URL_MIEMBRO_GET);
     }
 
+    async addFechasProyecto(fechas: fechas) {
+        this.httpClient.post(URL_FECHAS_ADD, fechas).subscribe(Response => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Se establecio la fecha correctamente!!',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }, error => {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Problemas al intentar establecer la fecha',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+    }
 
     addmiembroComite(comite: MiembroComite) {
         this.httpClient.post(URL_MIEMBRO_POST, comite).subscribe(Response => {

@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Anteproyecto } from 'src/models/anteproyecto';
-import { isInteger, toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 import Swal from 'sweetalert2';
 import { HOST_DATABASE } from 'src/database/host.database';
+import { evaluacion } from 'src/models/evaluacion';
 
 const URLANTEPROYECTO_GET = HOST_DATABASE + 'Project/Proyectos';
 const URLANTEPROYECTO_GUARDAR = HOST_DATABASE + 'Project/Post';
 const URLANTEPROYECTO_GET_ADVISOR = HOST_DATABASE + 'Project/Proyectos';
 const URLASESOR_POST_ASIGNADOS = HOST_DATABASE + 'Asesor/GetProyectosAsociados?id=';
+const URLPORYECTO_EVALUADOS = HOST_DATABASE + 'Evaluation/EvaluationsStudent?identification=';
 @Injectable({ providedIn: 'root' })
 export class ServiceAnteproyectoService {
     constructor(private httpClient: HttpClient) { }
@@ -22,6 +23,9 @@ export class ServiceAnteproyectoService {
     }
 
 
+    async getProyectoEvaluados(id: string) {
+        return this.httpClient.get<evaluacion[]>(URLPORYECTO_EVALUADOS + id);
+    }
 
     async getAnteproyectoAsesor() {
         return this.httpClient.get<Anteproyecto[]>(URLANTEPROYECTO_GET_ADVISOR);
@@ -46,6 +50,8 @@ export class ServiceAnteproyectoService {
 
 
         this.httpClient.post(URLANTEPROYECTO_GUARDAR, datos).subscribe(Response => {
+            console.log(Response);
+
             Swal.fire({
                 position: 'center',
                 icon: 'success',

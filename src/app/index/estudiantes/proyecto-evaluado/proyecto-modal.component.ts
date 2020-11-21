@@ -4,11 +4,11 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
     selector: 'modal-evaluacion',
     template: `
-    <h3 mat-dialog-title>Descripción de la evalución</h3>
+    <h5 mat-dialog-title>Descripción de la evalución</h5>
         <div mat-dialog-content class="mat-typography">
                 <div class="row">
                     <div class="col-12">
-                        <h5>{{data.evaluacion}}</h5>
+                        <p class="text-justify font-weight-light" >{{data}}</p>
                     </div>
                 </div>
         </div>
@@ -17,7 +17,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 
 export class ProyectoModal implements OnInit {
-    constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+    constructor(@Inject(MAT_DIALOG_DATA) public data: string) { }
 
     ngOnInit() { }
 }

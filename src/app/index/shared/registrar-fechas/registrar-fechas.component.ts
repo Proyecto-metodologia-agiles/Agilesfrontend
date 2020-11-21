@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { fechas } from 'src/models/fechas';
+import { MiembroComiteService } from 'src/services/comite.service';
 
 @Component({
   selector: 'registrar-fechas',
@@ -9,12 +9,16 @@ import { fechas } from 'src/models/fechas';
 })
 export class RegistrarFechasComponent implements OnInit {
   fecha = new fechas();
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private comiteService: MiembroComiteService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    //this.ServiceComite.valorarProyecto(this.ValoracionProyecto);
+    this.fecha.DateOne = new Date("07/11/2020");
+    this.fecha.DateTwo = new Date("10/12/2020");
+    console.log(this.fecha);
+
+    this.comiteService.addFechasProyecto(this.fecha);
   }
 }
