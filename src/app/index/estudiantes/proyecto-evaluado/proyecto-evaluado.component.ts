@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { ProyectoModal } from './poryecto-modal.component';
+import { ProyectoModal } from './proyecto-modal.component';
 import { ServiceAnteproyectoService } from 'src/services/anteproyecto.service';
 import { LoginService } from 'src/services/login.service';
 import { sesion } from 'src/models/login';
@@ -27,7 +27,6 @@ export class ProyectoEvaluadoComponent implements OnInit {
     await Promise.all([
       (await this.serviceanteproyecto.getProyectoEvaluados(this.session.idetification)).subscribe(
         (Response: evaluacion[]) => {
-          console.log(Response);
           this.dataSource = new MatTableDataSource(Response);
           this.dataSource.paginator = this.paginator;
         }
