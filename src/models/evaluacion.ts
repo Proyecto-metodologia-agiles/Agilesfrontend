@@ -1,6 +1,9 @@
+import { Anteproyecto } from './anteproyecto';
+
 export class evaluacion {
-    ProjectId: number;
-    Observation: string;
+  ProjectId: number;
+  Observation: string;
+  Anteproyecto: [];
 
   constructor() {
     this.ProjectId = 0;

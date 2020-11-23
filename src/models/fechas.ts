@@ -1,11 +1,9 @@
 export class fechas {
-    Period: number;
-    StartDate: string;
-    EndDate:string;
+  DateOne: Date;
+  DateTwo: Date;
 
   constructor() {
-    this.Period = 0;
-    this.StartDate = '';
-    this.EndDate='';
+    this.DateOne = null;
+    this.DateTwo = null;
   }
 }
