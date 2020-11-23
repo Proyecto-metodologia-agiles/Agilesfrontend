@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { IndexComponent } from './index.component';
 import { MenuComponent } from './menu/menu.component';
 import { AngularMaterialModule } from '../angularmaterial.module';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 // import { InicioComponent } from './inicio/inicio.component';
 import { EstudianteComponent } from './estudiantes/estudiantes.component';
 import { ListarEstudiantesComponent } from './estudiantes/listar-estudiantes/listar-estudiantes.component';
@@ -60,7 +62,9 @@ import { ProyectoValoradoComponent } from './estudiantes/proyecto-valorado/proye
         AngularMaterialModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule, 
+        MatDatepickerModule,
+        MatNativeDateModule
     ],
     providers: [ServiceAsesorService, ServiceEstudianteService, MiembroComiteService, ServiceAnteproyectoService, ServiceAsesoriasService, LoginService],
     bootstrap: [IndexComponent]

@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angularmaterial.module';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 registerLocaleData(localeIsCO, 'es-Co')
 
@@ -22,6 +23,7 @@ registerLocaleData(localeIsCO, 'es-Co')
     AngularMaterialModule,
     CommonModule,
     AppRoutingModule,
+    MatDatepickerModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es-Co' }],
   bootstrap: [AppComponent]

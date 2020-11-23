@@ -8,7 +8,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
         <div mat-dialog-content class="mat-typography">
                 <div class="row">
                     <div class="col-12">
-                        <h5>{{data.valoracion}}</h5>
+                        <h5>{{data}}</h5>
                     </div>
                 </div>
         </div>

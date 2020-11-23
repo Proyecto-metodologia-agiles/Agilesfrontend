@@ -4,17 +4,24 @@
     <form (ngSubmit)="form.form.valid && onSubmit()" #form="ngForm">
         <div class="row">
             <div class="col-6">
-                <mat-form-field appearance="outline" class="mat-form-field w-100">
-                    <mat-label>Fecha de Inicio</mat-label>
-                    <input type="date" name="fechainicio" required>
+                <mat-form-field appearance="fill">
+                    <mat-label>Escoja Una fecha de Inicio</mat-label>
+                    <input matInput [matDatepicker]="picker"  name="fechaInicio"
+                    [(ngModel)]="fecha.DateOne" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
             </div>
             <div class="col-6">
-                <mat-form-field appearance="outline" class="mat-form-field w-100">
-                    <mat-label>Fecha de Culminación</mat-label>
-                    <input type="date" name="fechaculminacion" required>
-                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Escoja Una fecha de Finalización</mat-label>
+                    <input matInput [matDatepicker]="picker2"  name="fechaFinal"
+                    [(ngModel)]="fecha.DateTwo" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>   
             </div>
+
         </div>
         <mat-dialog-actions align="center">
             <button mat-raised-button id="btn-color" class="mb-4" [mat-dialog-close]="true"

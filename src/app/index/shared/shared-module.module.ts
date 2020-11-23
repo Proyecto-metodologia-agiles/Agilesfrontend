@@ -11,6 +11,7 @@ import { RegistrarEstudianteComponent } from "./registrar-estudiante/registrar-e
 import { RegistrarProyectoComponent } from "./registrar-proyecto/registrar-proyecto.component";
 import { ValorarAnteproyectoModalComponent } from "./valorar-anteproyecto/valorar-anteproyecto.component";
 import { RegistrarFechasComponent } from './registrar-fechas/registrar-fechas.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
     imports: [
@@ -18,7 +19,7 @@ import { RegistrarFechasComponent } from './registrar-fechas/registrar-fechas.co
         AngularMaterialModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule],
+        HttpClientModule,MatDatepickerModule],
     declarations: [
         CofirmarAsesoriasComponent,
         EvaluarAteproyectoComponent,
