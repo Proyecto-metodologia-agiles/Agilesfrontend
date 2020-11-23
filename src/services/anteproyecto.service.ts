@@ -4,12 +4,14 @@ import { Anteproyecto } from 'src/models/anteproyecto';
 import Swal from 'sweetalert2';
 import { HOST_DATABASE } from 'src/database/host.database';
 import { evaluacion } from 'src/models/evaluacion';
+import { ValoracionProyecto } from 'src/models/miembroComite';
 
 const URLANTEPROYECTO_GET = HOST_DATABASE + 'Project/Proyectos';
 const URLANTEPROYECTO_GUARDAR = HOST_DATABASE + 'Project/Post';
 const URLANTEPROYECTO_GET_ADVISOR = HOST_DATABASE + 'Project/Proyectos';
 const URLASESOR_POST_ASIGNADOS = HOST_DATABASE + 'Asesor/GetProyectosAsociados?id=';
 const URLPORYECTO_EVALUADOS = HOST_DATABASE + 'Evaluation/EvaluationsStudent?identification=';
+const URLPROYECTO_VALORADO = HOST_DATABASE + 'Valoration/ValorationsStudent?identification=';
 @Injectable({ providedIn: 'root' })
 export class ServiceAnteproyectoService {
     constructor(private httpClient: HttpClient) { }
@@ -26,6 +28,10 @@ export class ServiceAnteproyectoService {
     async getProyectoEvaluados(id: string) {
         return this.httpClient.get<evaluacion[]>(URLPORYECTO_EVALUADOS + id);
     }
+    async getProyectoValorados(id: string) {
+        return this.httpClient.get<ValoracionProyecto[]>(URLPROYECTO_VALORADO + id);
+    }
+
 
     async getAnteproyectoAsesor() {
         return this.httpClient.get<Anteproyecto[]>(URLANTEPROYECTO_GET_ADVISOR);
