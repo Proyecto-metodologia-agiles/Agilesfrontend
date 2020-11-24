@@ -3,9 +3,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from 'src/app/angularmaterial.module';
+import { FormBuilder,  ReactiveFormsModule } from '@angular/forms';
+import { MiembroComiteService } from 'src/services/comite.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 import { RegistrarFechasComponent } from './registrar-fechas.component';
 
@@ -20,8 +24,11 @@ describe('RegistrarFechasComponent', () => {
       FormsModule,
       CommonModule,
       HttpClientModule,
-      MatDialogModule],
+      MatDialogModule,
+      ReactiveFormsModule],
       declarations: [ RegistrarFechasComponent ],
+      providers: [FormBuilder,MiembroComiteService,MatDatepickerModule]
+
       /*providers: [MiembroComiteService,
         {
           provide: MatDialogRef,
