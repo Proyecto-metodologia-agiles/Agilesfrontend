@@ -29,7 +29,7 @@ describe('EvaluarAteproyectoComponent', () => {
 				}, {
 					provide: MAT_DIALOG_DATA,
 					useValue: {
-						id: '1'
+						//id: '1'
 					} // Add any data you wish to test if it is passed/used correctly
 				}
 			]

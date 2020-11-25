@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { sesion } from 'src/models/login';
 import { LoginService } from 'src/services/login.service';
 import { Router } from '@angular/router';
+import { ActualizarPasswordComponent } from '../shared/actualizar-password/actualizar-password.component';
 
 
 @Component({
@@ -35,6 +36,15 @@ export class MenuComponent implements OnInit {
 	cerrarSesion() {
 		this.LoginService.cerrarSesion();
 		this.PageRoutes.navigateByUrl('/login');
+	}
+
+	openDialog() {
+		const dialogRef = this.dialog.open(ActualizarPasswordComponent, {
+			width: '300%',
+		});
+		dialogRef.afterClosed().subscribe(result => {
+			console.log(`Dialog result: ${result}`);
+		});
 	}
 
 }

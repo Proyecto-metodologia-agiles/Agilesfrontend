@@ -12,6 +12,7 @@ import { RegistrarProyectoComponent } from "./registrar-proyecto/registrar-proye
 import { ValorarAnteproyectoModalComponent } from "./valorar-anteproyecto/valorar-anteproyecto.component";
 import { RegistrarFechasComponent } from './registrar-fechas/registrar-fechas.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ActualizarPasswordComponent } from './actualizar-password/actualizar-password.component';
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
         RegistrarEstudianteComponent,
         RegistrarProyectoComponent,
         ValorarAnteproyectoModalComponent,
-        RegistrarFechasComponent
+        RegistrarFechasComponent,
+        ActualizarPasswordComponent
     ],
     exports: [
         CofirmarAsesoriasComponent,
