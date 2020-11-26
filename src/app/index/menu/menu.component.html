@@ -16,7 +16,7 @@
                     </menu-estudiante>
                     <menu-asesor (opcion)="cambiarOpcion($event)"
                         *ngIf="session.type == 'Asesor' || session.type == 'Miembro Comite'"></menu-asesor>
-                    <mat-list-item (click)="openDialog()">
+                    <mat-list-item (click)="openDialog()" *ngIf="session.type == 'Estudiante'">
                         <h6>
                             <mat-icon class="icon-aling" mat-icon>update</mat-icon> Actualizar Contraseña
                         </h6>
