@@ -16,7 +16,7 @@
                     </menu-estudiante>
                     <menu-asesor (opcion)="cambiarOpcion($event)"
                         *ngIf="session.type == 'Asesor' || session.type == 'Miembro Comite'"></menu-asesor>
-                    <mat-list-item (click)="cerrarSesion()">
+                    <mat-list-item (click)="openDialog()">
                         <h6>
                             <mat-icon class="icon-aling" mat-icon>update</mat-icon> Actualizar Contraseña
                         </h6>
@@ -26,7 +26,7 @@
                             <mat-icon class="icon-aling" mat-icon>close</mat-icon> Cerrar Sesión
                         </h6>
                     </mat-list-item>
-                    
+
                 </mat-accordion>
             </mat-nav-list>
         </div>

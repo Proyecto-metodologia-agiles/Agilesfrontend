@@ -1,10 +1,12 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Login } from 'src/models/login';
+import Swal from 'sweetalert2';
+import { actualizar_contrasena, Login } from 'src/models/login';
 import { HOST_DATABASE } from 'src/database/host.database';
 import { menuOptions } from 'src/types/types';
 
 const URL_LOGIN_POST = HOST_DATABASE + 'User/Login';
+const URL_ACTUALIZAR_CONTRAENA = HOST_DATABASE + 'Estudiante/UpdatePassword';
 
 const headersLogin = new HttpHeaders();
 headersLogin.set('Content-Type', 'application/json');
@@ -57,4 +59,26 @@ export class LoginService {
             && login.Email != '' && login.Password != ''
             && login.Email != null && login.Password != null;
     }
+
+    updateActualizarContrasena(actualizar_contrasena: actualizar_contrasena) {
+        this.httpClient.put(URL_ACTUALIZAR_CONTRAENA, actualizar_contrasena).subscribe(Response => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Se ha cambiado la contraseña con exito',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }, error => {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Problemas al intentar cambiar la contraseña',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+
+    }
+
 }
