@@ -1,1 +1,1 @@
-export const HOST_DATABASE = 'http://2baa9b62a42f.ngrok.io/api/'
+export const HOST_DATABASE = 'http://0e2d9e686fce.ngrok.io/api/'

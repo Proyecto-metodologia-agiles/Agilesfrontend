@@ -19,3 +19,8 @@ export class sesion {
   type: string;
 
 }
+
+export class actualizar_contrasena {
+  identification: string;
+  Password: string;
+}
