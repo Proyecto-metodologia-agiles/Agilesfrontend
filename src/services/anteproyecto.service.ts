@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Anteproyecto } from 'src/models/anteproyecto';
+import { Anteproyecto, updateDocumento } from 'src/models/anteproyecto';
 import Swal from 'sweetalert2';
 import { HOST_DATABASE } from 'src/database/host.database';
 import { evaluacion } from 'src/models/evaluacion';
@@ -12,6 +12,7 @@ const URLANTEPROYECTO_GET_ADVISOR = HOST_DATABASE + 'Project/Proyectos';
 const URLASESOR_POST_ASIGNADOS = HOST_DATABASE + 'Asesor/GetProyectosAsociados?id=';
 const URLPORYECTO_EVALUADOS = HOST_DATABASE + 'Evaluation/EvaluationsStudent?identification=';
 const URLPROYECTO_VALORADO = HOST_DATABASE + 'Valoration/ValorationsStudent?identification=';
+const URLANTEPROYECTO_ACTUALIZAR = HOST_DATABASE + 'Project/Pust';
 @Injectable({ providedIn: 'root' })
 export class ServiceAnteproyectoService {
     constructor(private httpClient: HttpClient) { }
@@ -32,11 +33,38 @@ export class ServiceAnteproyectoService {
         return this.httpClient.get<ValoracionProyecto[]>(URLPROYECTO_VALORADO + id);
     }
 
-
     async getAnteproyectoAsesor() {
         return this.httpClient.get<Anteproyecto[]>(URLANTEPROYECTO_GET_ADVISOR);
     }
 
+
+    async updateArchivoProyecto(data: updateDocumento) {
+        let datos = new FormData();
+
+        datos.append("Id", data.Id);
+        datos.append("Archive", data.IFormFile);
+
+        this.httpClient.put(URLANTEPROYECTO_ACTUALIZAR, datos).subscribe((Response: any) => {
+            if (Response.message === 'Se registro con exito al proyecto: .') {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: Response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: Response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+
+        });
+    }
 
     addAnteproyecto(anteproyecto: Anteproyecto) {
 
@@ -52,12 +80,7 @@ export class ServiceAnteproyectoService {
         datos.append("Student_1", anteproyecto.Student_1);
         datos.append("Student_2", anteproyecto.Student_2);
 
-        console.log(anteproyecto);
-
-
         this.httpClient.post(URLANTEPROYECTO_GUARDAR, datos).subscribe(Response => {
-            console.log(Response);
-
             Swal.fire({
                 position: 'center',
                 icon: 'success',
