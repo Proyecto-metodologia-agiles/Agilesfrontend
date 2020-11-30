@@ -45,23 +45,13 @@ export class ServiceAnteproyectoService {
         datos.append("Archive", data.IFormFile);
 
         this.httpClient.put(URLANTEPROYECTO_ACTUALIZAR, datos).subscribe((Response: any) => {
-            if (Response.message === 'Se registro con exito al proyecto: .') {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: Response.message,
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            } else {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'error',
-                    title: Response.message,
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            }
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: Response.message,
+                showConfirmButton: false,
+                timer: 1500
+            });
 
         });
     }
