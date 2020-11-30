@@ -24,8 +24,6 @@ export class ValorarAnteproyectoComponent implements OnInit {
     await Promise.all([
       (await this.proyectoservice.getAnteproyecto()).subscribe(
         Response => {
-          console.log(Response);
-
           this.dataSource = new MatTableDataSource(Response);
           this.dataSource.paginator = this.paginator;
         }
