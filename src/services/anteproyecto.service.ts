@@ -71,6 +71,8 @@ export class ServiceAnteproyectoService {
         datos.append("Student_2", anteproyecto.Student_2);
 
         this.httpClient.post(URLANTEPROYECTO_GUARDAR, datos).subscribe(Response => {
+            console.log(Response);
+
             Swal.fire({
                 position: 'center',
                 icon: 'success',
