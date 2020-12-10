@@ -11,11 +11,9 @@
                 <mat-accordion multi="true" class="example-headers-align">
                     <menu-miembro-comite (opcion)="cambiarOpcion($event)" *ngIf="session.type == 'Miembro Comite'">
                     </menu-miembro-comite>
-                    <menu-estudiante (opcion)="cambiarOpcion($event)"
-                        *ngIf="session.type == 'Estudiante' || session.type == 'Miembro Comite'">
+                    <menu-estudiante (opcion)="cambiarOpcion($event)" *ngIf="session.type == 'Estudiante'">
                     </menu-estudiante>
-                    <menu-asesor (opcion)="cambiarOpcion($event)"
-                        *ngIf="session.type == 'Asesor' || session.type == 'Miembro Comite'"></menu-asesor>
+                    <menu-asesor (opcion)="cambiarOpcion($event)" *ngIf="session.type == 'Asesor'"></menu-asesor>
                     <mat-list-item (click)="openDialog()" *ngIf="session.type == 'Estudiante'">
                         <h6>
                             <mat-icon class="icon-aling" mat-icon>update</mat-icon> Actualizar Contraseña
@@ -39,10 +37,10 @@
         </mat-icon>
         <div class="HeaderStyle">Universidad Popular del Cesar</div>
         <span class="example-spacer"></span>
-        <button mat-icon-button>
-            <mat-icon class="icon-header">person</mat-icon>
+        <div>
+            <mat-icon class="icon-header" mat-icon>person</mat-icon>
             <span class="HeaderStyle">{{session.name}}</span>
-        </button>
+        </div>
     </mat-toolbar>
 
     <div class="main contents">

@@ -15,20 +15,23 @@
             <div class="col-12">
                 <mat-form-field appearance="outline" class="mat-form-field w-100">
                     <mat-label>Estudiante 1</mat-label>
-                    <input type="text" matInput placeholder="Digite su cedula" name="estudiante_1"
-                        [(ngModel)]="anteproyecto.Student_1" required>
+                    <input type="text" matInput name="estudiante_1" value="{{data.idetification}}" disabled>
                 </mat-form-field>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
+                <small class="smallform" *ngIf="Estudiante.length === 0">No hay estudiantes registrados sin
+                    proyecto</small>
                 <mat-form-field appearance="outline" class="mat-form-field w-100">
-                    <mat-label>Estudiante 2</mat-label>
-                    <mat-select name="estudiante_2" [(ngModel)]="anteproyecto.Student_2">
-                        <mat-option *ngFor="let item of Estudiante" [value]="item.cedula">
-                            {{item.nombreCompleto}}
+                    <mat-label>Estudainte 2</mat-label>
+                    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto"
+                        placeholder="Ingrese el nombre para buscar al estudiante">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let Estudiante of filteredOptions | async" [value]="Estudiante.cedula">
+                            {{Estudiante.nombreCompleto}}
                         </mat-option>
-                    </mat-select>
+                    </mat-autocomplete>
                 </mat-form-field>
             </div>
         </div>
