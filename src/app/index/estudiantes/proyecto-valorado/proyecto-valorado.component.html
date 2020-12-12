@@ -1,0 +1,46 @@
+<div class="container  mt-5">
+    <div class="container-header">
+        <div class="row">
+            <div class="col-12">
+                <h1>Valoración por parte del Comité Evaluador</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="mat-elevation-z2">
+                    <table mat-table [dataSource]="dataSource" class="w-100" MatSort>
+                        <ng-container matColumnDef="No">
+                            <th mat-header-cell *matHeaderCellDef> No. </th>
+                            <td mat-cell *matCellDef="let item; let i = index;"> {{(i+1)}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="proyecto">
+                            <th mat-header-cell *matHeaderCellDef> Título del Proyecto</th>
+                            <td mat-cell *matCellDef="let item"> {{item.project.title}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="fecha">
+                            <th mat-header-cell *matHeaderCellDef> Fecha de Valoración</th>
+                            <td mat-cell *matCellDef="let item"> {{item.date  | date:"longDate"}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="valoracion">
+                            <th mat-header-cell *matHeaderCellDef> Descripción de la Valoración</th>
+                            <td mat-cell *matCellDef="let item" style="text-align: center;">
+                                {{item.valoracion}}
+                                <button mat-icon-button color="primary" (click)="verValoracion(item.valoration +' ' +item.observation)">
+                                    <mat-icon>check_box</mat-icon>
+                                </button>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

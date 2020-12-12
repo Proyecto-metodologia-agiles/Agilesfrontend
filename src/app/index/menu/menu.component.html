@@ -1,0 +1,49 @@
+<mat-drawer-container [class.drawer-opened]="drawer.opened" class="example-container" [hasBackdrop]="false">
+    <mat-drawer #drawer class="drawer" mode="side" opened="true">
+
+        <mat-toolbar class="header">
+            <img (click)="cambiarOpcion('inicio')" src=" ../../../assets/logo_universidad_popular.png" width="120px"
+                alt="">
+            <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
+        </mat-toolbar>
+        <div class="main-itemcontes">
+            <mat-nav-list>
+                <mat-accordion multi="true" class="example-headers-align">
+                    <menu-miembro-comite (opcion)="cambiarOpcion($event)" *ngIf="session.type == 'Miembro Comite'">
+                    </menu-miembro-comite>
+                    <menu-estudiante (opcion)="cambiarOpcion($event)" *ngIf="session.type == 'Estudiante'">
+                    </menu-estudiante>
+                    <menu-asesor (opcion)="cambiarOpcion($event)" *ngIf="session.type == 'Asesor'"></menu-asesor>
+                    <mat-list-item (click)="openDialog()" *ngIf="session.type == 'Estudiante'">
+                        <h6>
+                            <mat-icon class="icon-aling" mat-icon>update</mat-icon> Actualizar Contraseña
+                        </h6>
+                    </mat-list-item>
+                    <mat-list-item (click)="cerrarSesion()">
+                        <h6>
+                            <mat-icon class="icon-aling" mat-icon>close</mat-icon> Cerrar Sesión
+                        </h6>
+                    </mat-list-item>
+
+                </mat-accordion>
+            </mat-nav-list>
+        </div>
+
+    </mat-drawer>
+
+    <mat-toolbar class="main header">
+        <mat-icon *ngIf="!drawer.opened" (click)="drawer.toggle()">
+            menu
+        </mat-icon>
+        <div class="HeaderStyle">Universidad Popular del Cesar</div>
+        <span class="example-spacer"></span>
+        <div>
+            <mat-icon class="icon-header" mat-icon>person</mat-icon>
+            <span class="HeaderStyle">{{session.name}}</span>
+        </div>
+    </mat-toolbar>
+
+    <div class="main contents">
+        <ng-content></ng-content>
+    </div>
+</mat-drawer-container>

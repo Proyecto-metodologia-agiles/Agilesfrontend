@@ -1,0 +1,84 @@
+.drawer {
+    position: fixed;
+    height: 100vh;
+    min-width: 19%;
+    border-right: 1px solid #ccc;
+  }
+  .drawer .header {
+    position: absolute;
+    right: 0;
+    justify-content: space-between;
+  }
+  .drawer .contents {
+    padding: 16px;
+  }
+  
+  .main {
+    background-color: #fff;
+  }
+  
+  .main.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    background-color:  #339240;
+    color: #fff;
+  }
+  
+  .main.contents {
+    min-height: 30vh;
+    /* margin-top: 74px; height of header */
+    padding: 16px;
+  }
+  
+  .main-itemcontes{
+    min-height: 30vh;
+    margin-top: 50px; /* height of header */
+    padding: 10px;
+  }
+ 
+  
+  .mat-drawer-container {
+    position: inherit;
+    display: unset;
+    height: 0%;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+ 
+
+  .icon-header{
+    margin-left: -30px;
+  }
+
+  .example-action-buttons {
+    padding-bottom: 20px;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-title,
+  .example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .example-headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+.icon-aling{
+    vertical-align: bottom
+  }
+
+
+.mat-expansion-panel-header{
+    padding: 0 16px;
+  }

@@ -1,0 +1,18 @@
+<index-menu (opcion)="verOpcion($event)">
+    <!--<index-inicio *ngIf="opcionMenu === 'inicio'"></index-inicio>-->
+    <!-- <listar-estudiantes *ngIf="opcionMenu === 'ItemEstudiante'"></listar-estudiantes> -->
+    <index-estudiantes *ngIf="opcionMenu === 'Estudiante'"></index-estudiantes>
+    <index-asesores *ngIf="opcionMenu === 'Asesor'"></index-asesores>
+    <index-miembros-comite *ngIf="opcionMenu === 'Miembro Comite'"></index-miembros-comite>
+    <index-listar-proyecto *ngIf="opcionMenu === 'listarProyecto'"></index-listar-proyecto>
+    <listar-proyecto-asignar *ngIf="opcionMenu === 'listarProyectoAsignar'"></listar-proyecto-asignar>
+    <listar-proyectos-asignados *ngIf="opcionMenu === 'listarProyectosAsignados'"></listar-proyectos-asignados>
+    <listar-estudiantes *ngIf="opcionMenu === 'estudiantes'"></listar-estudiantes>
+    <listar-asesores *ngIf="opcionMenu === 'asesores'"></listar-asesores>
+    <Gestion-Comite *ngIf="opcionMenu === 'miembrosComite'"></Gestion-Comite>
+    <index-valorar-anteproyecto *ngIf="opcionMenu === 'ValorarProyectoC'"></index-valorar-anteproyecto>
+    <sharedvalorar-anteproyecto *ngIf="opcionMenu === 'valorarAnteproyecto'"></sharedvalorar-anteproyecto>
+    <evaluar-anteproyecto *ngIf="opcionMenu === 'evaluarAnteproyecto'"></evaluar-anteproyecto>
+    <proyecto-evaluado *ngIf="opcionMenu === 'evaluadoestudiante'"></proyecto-evaluado>
+    <proyecto-valorado *ngIf="opcionMenu === 'valoradoestudiante'"></proyecto-valorado>
+</index-menu>

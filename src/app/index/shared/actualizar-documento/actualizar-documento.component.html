@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Actualización Documento de AnteProyecto</h2>
+<mat-dialog-content class="mat-typography">
+    <p class="title-body font-weight-light text-wrap">Cargue el documento en el siguiente espacio</p>
+    <form (ngSubmit)="form.form.valid && onSubmit()" #form="ngForm">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-12">
+                    <div class="custom-file">
+                        <input accept=".pdf" type="file" class="custom-file-input" id="customFile"
+                            (change)="onFileChange($event)" required>
+                        <label class="custom-file-label" for="customFile">Adjunte archivo de Anteproyecto</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-dialog-actions align="center">
+            <button mat-raised-button id="btn-color" class="mb-4" [mat-dialog-close]="true"
+                type="submit">Guardar</button>
+            <button mat-raised-button mat-dialog-close color="warn" class="mb-4">Cancelar</button>
+        </mat-dialog-actions>
+
+    </form>
+</mat-dialog-content>

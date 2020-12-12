@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main.contents {
+  min-height: 100vh;
+  margin-top: 0px; /* height of header */
+}
+
+.drawer .contents {
+  padding: 16px;
+}

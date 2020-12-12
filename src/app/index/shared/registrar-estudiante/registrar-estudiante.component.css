@@ -1,0 +1,11 @@
+#btn-color{
+    color: #ffffff;
+    background-color: #339240 !important;
+}
+
+.mat-dialog-actions{
+    padding: 8px 0; 
+    min-height: 52px; 
+    align-content: center;
+    margin-bottom: 0px;
+}
