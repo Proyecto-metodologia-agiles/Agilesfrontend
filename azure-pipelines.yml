@@ -10,12 +10,51 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: NodeTool@0
+- task: DeleteFiles@1
+  displayName: 'Delete JUnit files'
   inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+    SourceFolder: testresults/junit
+    Contents: 'unit-test-result.xml'
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    command: install
+    workingDir: src
+
+- task: Npm@1
+  displayName: 'Test Angular'
+  inputs:
+    command: custom
+    customCommand: run test -- --watch=false --code-coverage
+    workingDir: src
+
+- task: Npm@1
+  displayName: 'Build Angular'
+  inputs:
+    command: custom
+    customCommand: run build -- --prod
+    workingDir: src
+
+- task: PublishPipelineArtifact@0
+  inputs:
+    artifactName: 'angular'
+    targetPath: 'dist'
+
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage Angular results'
+  condition: succeededOrFailed()
+  inputs:
+    codeCoverageTool: cobertura
+    summaryFileLocation: 'testresults/coverage/code-coverage.xml'
+    reportDirectory: testresults
+    failIfCoverageEmpty: true
+
+- task: PublishTestResults@2
+  displayName: 'Publish Angular test results'
+  condition: succeededOrFailed()
+  inputs:
+    searchFolder: $(System.DefaultWorkingDirectory)/testresults/junit
+    testRunTitle: Angular
+    testResultsFormat: JUnit
+    testResultsFiles: "unit-test-result.xml"
