@@ -18,6 +18,17 @@ export class sesion {
   telephone: string;
   type: string;
 
+  constructor() {
+    this.email = '';
+    this.fail = true;
+    this.id = '';
+    this.idetification = '';
+    this.message = '';
+    this.name = '';
+    this.telephone = '';
+    this.type = '';
+  }
+
 }
 
 export class actualizar_contrasena {

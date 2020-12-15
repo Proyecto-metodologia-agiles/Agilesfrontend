@@ -15,7 +15,7 @@ import { evaluacion } from 'src/models/evaluacion';
 })
 export class ProyectoEvaluadoComponent implements OnInit {
   displayedColumns: string[] = ['No', 'titulo_proyecto', 'observacion', "fecha", "accion"];
-  session: sesion;
+  session = new sesion();
   dataSource = new MatTableDataSource();
   data = [{ No: 1, proyecto: "caminar", evaluacion: "acacaca" }];
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;

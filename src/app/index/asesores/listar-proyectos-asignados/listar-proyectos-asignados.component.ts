@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ServiceAnteproyectoService } from 'src/services/anteproyecto.service'
 import { ServiceAsesorService } from 'src/services/asesor.service';
 import { sesion } from 'src/models/login';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'listar-proyectos-asignados',
@@ -28,7 +29,13 @@ export class ListarProyectosAsignadosComponent implements OnInit {
             this.dataSource = new MatTableDataSource(Response.projects);
             this.dataSource.paginator = this.paginator;
           } else {
-            console.log("error");
+            Swal.fire({
+              position: 'center',
+              icon: 'info',
+              title: Response.mensaje,
+              showConfirmButton: false,
+              timer: 1500
+            });
           }
 
         }
